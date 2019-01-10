@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 배열 </title>
+		<style>
+			p{
+				text-align: c
+			}
+		</style>
+	</head>
+		
+	
+	<body>
+		<script>
+			var score= [100,98,12,55,66,77,88,99,67,56]; //10개의 배열
+			var b= "<br>";
+			var sum= 0;
+			document.write("<h1> score 배열 출력 </h1> ");
+				
+			//for(var i=0; i<10; i++){
+			for(var i in score){		
+				document.write(score[i]+"&nbsp;&nbsp;");
+				sum += score[i];
+			}
+			
+			document.write("<br>");
+			document.write("<p> 총점=" +sum+ "&nbsp;&nbsp&nbsp&nbsp </p>");
+			document.write("평균=" +(sum/score.length)+ "<br>" );
+			
+			
+			
+		</script>
+	</body>
+</html>

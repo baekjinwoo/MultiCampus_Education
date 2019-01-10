@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>css 연습1</title>
+		<style type="text/css"> 
+			font{ size:px5; color:red; font-family:궁서;}  /* head에서 style=>font사용시 전체 편집 */
+			
+			p{ background-color: yellow; 
+			   }
+			
+			span{ border: solid 3px yellow }
+			
+			/* 타입연산자 (태그연산자) */
+			h1 {color:blue}
+			input[type=text] {color:red}
+			
+			/* body전체선택자 */
+			/* *{background-color: green;} */
+			
+			/* first라는 id아이디에만 적용되는 설정 */
+			#first
+			{background-color: green;}
+			
+			/* pink라는 클래스에만 적용되는 설정 */
+			.pink
+			{color:pink}
+			
+			/* 태그 그룹자 */
+			a, h1, div 
+			{font-family: monospace }
+			
+			/* h1태그에 포함된 a태그만 */
+			h1>a 
+			{border: 3px solid red}
+
+			/* 복수개의 선택자 => 자손선택자/ 자식선택자 */
+			div 태그 포함 모든 자손 a태그
+			div a {border:3px solid red;}
+			h1태그 포함 자식 a태그만
+			h1 > a  {border:3px solid red; }
+			
+		</style>
+	</head>
+	
+	<body>
+		<h1> 안녕하세요 </h1>
+		<font class="pink"> 텍스트1 </font>
+		<font style="color: green;"> 텍스트2 </font> <!-- 예외로 style 재설정/ -->
+		<font> 텍스트3 </font></br>
+		
+		<p class="pink"> p태그 내부입니다 </p></br>
+		<span class="pink"> s1태그 내부입니다</span></br>
+		
+		<!-- 첫번째 span에 first라는 id의 주소값을 부여해서, 첫번째span에만 css를 부여하려고한다 -->
+		<span id="first"> s2태그 내부입니다</span></br> 
+		
+		<input type="text" value="아이디입력"></br>
+		<input type="password" value="암호입력"></br>
+		
+<!-------------------------------------------------------------------------------->		<a href=""> a 태그 링크합니다.1 </a>
+		<a href=""> a 태그 링크합니다.1</a></br>
+		<h1><a href=""> a 태그 링크합니다.2</a></h1>
+
+		<div> div태그입니다. </div>
+		<h1><div> div 태그입니다.2<div></h1>
+		
+		<h1>
+			<a href=" ">  </a>
+		</h1>
+		
+		
+	</body>
+</html>

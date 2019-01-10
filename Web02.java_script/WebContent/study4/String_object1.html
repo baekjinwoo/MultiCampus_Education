@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 숫자반환, 그외는 null </title>
+		<script>
+			function check(){
+				var num= document.getElementById("in").value;
+				var result= num.match(/[0-9]+/ig); //null //match란 문자열안에서 일치하는 콘텐츠를 탐색하는데 사용된다.
+				document.getElementById("out").innerHTML=result;
+				// text 입력 검증버튼 클릭하면 숫자만으로 구성 검ㅈ증결과를 div 태그에 출력
+			}
+		</script>
+	</head>
+	
+	
+	<body>
+		<input type=text id="in">
+		<input type=button value="제출" onclick="check()">
+		<div id="out"> 검증되었습니다 </div>
+	
+	</body>
+</html>

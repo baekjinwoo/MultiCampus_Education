@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> jquery-이벤트 ['on,off,one,click'] </title>
+	<script src='jquery-3.2.1.min.js'></script>
+	<script>
+		$(document).ready(
+				function(){
+				//p.461은 click함수를 썻지만, 대체적으로 on함수를 가장 많이쓰기때문에 아래와같은 코드를 사용한다.
+				
+				//btn1 클릭시 경고창 출력 (on함수를 이용) ==> button에 click이벤트를 연결했다가
+				//$('#btn1').on('click', function(){ alert('클릭했네요'); } );
+				//$('#btn1').on('click', function(){ alert($(this).val()+'을 클릭햇네요'); } ); //value값을 읽어온다.
+				
+				
+//누를때마다 횟수가 출력되도록(1)				
+// 				var a=1;
+// 				$('#btn1').on('click', function(){ 
+// 						//alert(a++);
+// 						document.getElementById('result').innerHTML=((a++)+"을 클릭했네요");
+// 					});
+
+
+//누를때마다 횟수가 출력되도록(2)				
+				
+				var cnt=0; //전역변수로 사용해야지 클릭할때마다 cnt가 0이 되는것을 방지할 수 있다.
+				$('#btn1').on('click', 
+						function(){
+							cnt++;
+							$('#result').html(
+								$(this).val()+ cnt+'번 클릭하셨습니다');
+				} );
+
+
+				
+				//btn2 클릭시 btn1클릭이벤트 중단 (off함수를 이용)==> button에 click이벤트를 때어냈다가
+				$('#btn2').on('click', 
+						function(){ 
+							$('#btn1').off('click'); //btn2버튼을 누르면, btn1을 중단.
+					});
+				
+				
+				//btn3 클릭시  한 번만 이벤트 발생  (btn3->btn1클릭)
+				$('#btn3').on('click',
+						function(){
+					$('#btn1').one('click', //.one함수는 한번씩만 실행되는 함수,  http://findfun.tistory.com/308
+							function(){
+								alert('한 번만 말할테니 잘 들으세요');
+					});
+				});
+				
+				
+				
+				
+				
+				
+				
+				}//function-end
+			);
+	</script>
+	</head>
+	<body>
+		<input id='btn1' type="button" value="클릭버튼"> <!-- 누를때마다 -->
+		<input id='btn2' type="button" value="클릭중단버튼">
+		<input id='btn3' type="button" value="한번클릭"> <!-- 한번만 -->
+		<div id='result'></div>
+	</body>
+</html>

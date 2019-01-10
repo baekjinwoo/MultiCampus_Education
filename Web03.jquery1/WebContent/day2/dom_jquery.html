@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> dom_jquery </title>
+		<script src= jquery-3.2.1.min.js></script>
+		<script>
+		//이클립스 플러그인 설치 : 이클립스 추가 기능 설치 사용가능 (jquery 자동완성 플러그인 설치 : tern eclipse)
+			$(document).ready(function(){
+				$('#btn').on('click',function(){
+
+					//아래 중 하나 선택
+					alert($('#here').html()); //html은 innerHTML안의 태그까지도 출력된다
+					alert($('#here').text()); //text는 innerHTML안의 내용물만 출력된다
+
+					//아래 중 하나 선택 
+					//attr은 임의의 태그의 속성을 가져오는 것이니까  .val()과 attr('type')과 같아야한다
+					
+					//$('#name').val('홍길동'); //name의 value값에 '홍길동'인자를 넣어서 변경한다
+					//$('#here').html( "<h3>"+$('#name').val()+"</h3>"); //name의 value값을 조회해서 here에 넣어라 (html의 변경과정)
+					$('#name').attr('type','password'); //setter값변경,  getter 값조회   // type안에 text들어있어야하는데,,,,password로 변경시켜줌
+					$('#here').html
+					  		($('#name').attr('type')); //속성값을 알기위해  //getter용도로 사용 //name의 type속성을 here에 넣는다.(출력한다)
+							
+						
+											//eq[0]번째 행이 체크되있으면 true //checked된 행이 체크되있으면 true
+					$('#here').html( $('input:checkbox:checked').prop('checked')); 
+														//attr로하면 변경된 값을 받아올 수 없기때문에 prop를 써야한다
+	
+				
+					//$('#name').remove(); //name이라는 선택된 태그를 삭제해라 --> 입력박스 제거
+					//$('#name').empty(); //선택태그 내부삭제
+					
+					//$('body').empty(); // body태그 내부 다 삭제 (바디태그=style은 삭제안됨)
+					//$('body').remove(); // body태그 삭제
+					
+					
+				
+				
+				
+				
+				
+				
+				});
+			});
+		</script>
+	</head>
+	
+	
+	
+	
+	<body style='background-color:orange;'>
+		이름입력: <input type="text" id='name'><br>
+		
+		<input type="button" id='btn' value='전송'>
+		<div id='here'><h1>여기에 결과 출력</h1></div>
+		
+		<input type="checkbox" value='1'> 1<br>
+		<input type="checkbox" checked="checked" value='2'> 2<br>
+		<input type="checkbox" value='3'> 3<br>
+		
+		
+	</body>
+</html>

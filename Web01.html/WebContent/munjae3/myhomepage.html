@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>홈페이지 메뉴 리스트</title>
+<style>
+ul {
+	list-style-type: none;
+	border-top: 3px red solid;
+	border-bottom: 3px red solid;
+	margin: 10px auto;
+	text-align: center;
+}
+
+li {
+	display: inline;
+}
+
+li a {
+	color: black;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+li a:link {
+	text-decoration: none;
+}
+
+li a:visited {
+	text-decoration: none;
+}
+
+li a:hover {
+	text-decoration: underline;
+}
+
+div {
+	width: 300px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#here {
+	color: red;
+	font-size: 15px;
+	text-decoration: underline;
+}
+
+/*1. 리스트 포함 a 태그 문자열 한줄에 출력
+2. 리스트 스타일 출력x
+3. 리스트 위 아래 빨간선 3px 
+4. 리스트 포함 링크 문자열 마우스 위치시 밑줄
+5. 리스트 포함 링크 문자열 나머지 경우 밑줄x
+6. 리스트 포함 링크 문자열 색상 검정색 20px
+7. 리스트 포함 링크 문자열 수평 중앙 정렬
+8. 리스트 포함 링크 문자열 대문자로 출력
+8. div 링크 문자열 빨간색 15px 밑줄*/
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#"> shopping list</a></li>
+		<li><a href="#"> 장바구니(caRT)</a></li>
+		<li><a href="#"> MY homepage</a></li>
+		<li><a href="#"> q&a 게시판</a></li>
+	</ul>
+	<div>
+		<a id="here" href="#"> 이웃 사이트 방문하기</a>
+	</div>
+</body>
+</html>

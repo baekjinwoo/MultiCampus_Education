@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Dom5 예제 </title>
+	<style>
+			div {
+				background-color: yellow;
+			}
+	</style>
+	<script>
+			function add(text){
+			//test1
+			/*   var newnode=
+					document.createTextNode(text); //새롭게 추가하려는 노드가 뭔지 (생성)
+				var parent=
+					document.getElementById('here').appendChild(newnode);//어느 태그안에 삽입해야하는지? 위치를 작성  (appendChild대문자 필수)
+			} */	
+			
+	        //test2 	
+			/*  document.getElementById('here').innerHTML+='add함수 호출 결과입니다'; }*/
+			 
+			
+			//test3
+			//1. img 태그 생성
+			var img= document.createElement('img');
+			//2. 속성값 설정
+			img.width=100;
+			img.height=50;
+			img.src='../images/google.png';
+			
+			
+			//3. 1결과물을 body추가 
+			var parent= document.getElementById('loc');
+			parent.appendChild(img); //body의 뒤에서 작성된다 //img 변수 재사용x, 새로운태그 img2를 만들어줘야한다.
+			
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////
+			var img2=document.createElement("img"); //img를 주소로 가지는 새로운태그 img2를 만든다.
+			//2. 속성값 설정
+			img2.src='../images/google.png';
+			img2.width=100;
+			img2.height=50;
+			parent.insertBefore(img2, parent.firstChild); //insertBefore는 body(parent)의 앞에 넣고싶을때 쓴다. 그 중에서 firstChild첫번째자식앞에 넣는다
+			
+			//4. 노드를 선택적 제거
+			//parent.removeChild(img);
+			//parent.removeChild(img2);
+			}		  
+		
+			
+	</script>
+	</head>
+	
+	<body id="loc">
+		<!-- 노드하나를 추가하는 작업이다. div도 onclick에의해 클릭할 수 있다. ==> 클릭시, add생성  -->
+		<div id='here' onclick="add('add함수 호출 결과입니다 ')"> 여기를 클릭해보세요 </div> 
+	</body>
+</html>

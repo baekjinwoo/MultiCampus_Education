@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1 {
+	text-align: center;
+	background-color: yellow;
+}
+
+table {
+	border: 2px aqua solid;
+	margin: 0px auto;
+}
+
+td {
+	text-align: center;
+	border: 2px silver solid;
+}
+</style>
+</head>
+
+<!-- 지역변수로만 이용 -->
+<body>
+	<h1>게시물 출력</h1>
+	<table id='here'>
+		<script>
+			var count=0;
+			function inputBoard() {
+				var board = prompt("번호:제목:작성자:조회수 형식");
+				var boardArr = board.split(":");
+				return boardArr;
+			}
+
+			function boardTR(b) {
+				var resultTR = "<tr>";
+				for ( var i in b) {
+					resultTR += "<td>" + b[i] + "</td>";
+				}
+				resultTR += "</tr>";
+				return resultTR;
+			}
+
+// 오답(1)- 5초간격 무한루프
+// 		function final(){	
+// 				var boardArr = inputBoard();
+// 				var tr = boardTR(boardArr);
+// 				//document.write(tr);
+// 				document.getElementById("here").innerHTML+=tr;
+// 				count++;
+// 				if(count==5){
+// 					clearInterval(repeat);
+// 				}
+// 		}
+// 		var repaet= setInterval(final, 5000);
+			
+		
+		
+		
+//답(2) - 5초주기로 5번반복	
+		for(var i=1; i<=5; i++){
+			setTimeout(
+						function(){ var boardArr = inputBoard(); 
+									var tr = boardTR(boardArr); 
+									document.getElementById("here").innerHTML+=tr; }, 1000*i
+					  )
+		}
+
+			
+		</script>
+	</table>
+</body>
+</html>

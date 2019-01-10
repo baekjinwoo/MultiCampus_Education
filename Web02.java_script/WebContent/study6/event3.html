@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		//var target= document.getElementById('target'); 함수밖에 작성하면 동작하지않는다. 아직 존재하지않는 target을 head에서 찾다보니까
+			function big(){
+				var target= document.getElementById('target');
+				target.width=300;
+				target.height=200;
+			}
+			function small(){
+				target.width=100;
+				target.height=50;
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 최초는 원본 이미지 크기 그대로 -->
+		<!--  이미지위 마우스온: big() && 이미지위 마우스아웃: small()  -->
+		<img id='target' src='../images/google.png' onmouseover="big()" onmouseout="small()"> 
+																	  <!-- 모든상태는 on을 붙인다 -->
+
+
+
+<!-- 		<!--  이미지클릭시 마우스온: down() && 이미지 클릭떼면 마우스아웃: up()  -->														   -->
+<!-- 		<img id='target' src='../images/1.jpg' onmousedown="big()" onmouseup="small()">  -->
+	</body>
+</html>

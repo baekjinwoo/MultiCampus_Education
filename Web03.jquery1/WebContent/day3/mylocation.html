@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 나의 위치 조회 </title>
+		<script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready(function(){
+				$('input:button').on('click',function(){
+					navigator.geolocation.getCurrentPosition(success, error)
+					//navigator.geolocation은 위치객체생성
+															//(성공시 호출함수, 오류시 호출함수, (생략가능=gps/기지국[ip]))
+				});											//Callback은 즉각적x 때가되면 알아서 생성되도ㅗㄹ==로
+			}); //ready-end
+			
+			//getCurrentPosition에 의해 위치가 성공적으로 파악이되면 success를~ 실패하면 error를~
+			function success(position){ //성공객체_위치정보객체
+				var lat = position.coords.latitude; //위도를 저장
+				var lon = position.coords.longitude; //경도를 저장
+				$('#result').text('나의위도='+lat+'나의 경도='+lon) 
+			}
+			
+			function error(e){ //오류객체
+				$('#result').text(e.code+':'+e.message);
+			}
+			
+		</script>
+	</head>
+	<body>
+	<input type='button' value='내  위치조회'><br>
+	<div id='result'></div> 
+	<!-- <input type='text' id='result'>  이건 왜 안되니?-->
+	</body>
+</html>

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1 {
+	text-align: center;
+	background-color: yellow;
+}
+
+table {
+	border: 2px aqua solid;
+	margin: 0px auto;
+}
+
+td {
+	text-align: center;
+	border: 2px silver solid;
+}
+</style>
+</head>
+
+<!-- 지역변수로만 이용 -->
+<body>
+	<h1>게시물 출력</h1>
+	<table>
+		<script>
+			function inputBoard() {
+				var board = prompt("번호:제목:작성자:조회수 형식");
+				var boardArr = board.split(":");
+				return boardArr;
+			}
+
+			function boardTR(b) {
+				var resultTR = "<tr>";
+				for ( var i in b) {
+					resultTR += "<td>" + b[i] + "</td>";
+				}
+				resultTR += "</tr>";
+				return resultTR;
+			}
+
+			for (var i = 1; i <= 5; i++) {
+				var boardArr = inputBoard();
+				var tr = boardTR(boardArr);
+				document.write(tr);
+			}
+		</script>
+	</table>
+</body>
+</html>

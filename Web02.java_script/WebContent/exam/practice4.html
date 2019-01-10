@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 12장 Jquery p508 </title>
+		<script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready(function(){
+			 	$('#btn1').on('click',function(){
+					$('#i1').slideUp('fast');
+			 	});
+			 	
+			 	$('#btn2').on('click',function(){
+					$('#i1').show('fast');
+			 	});
+			});
+			
+			$(document).ready(fuinction(){
+				$('#t1').blur(function(){
+					$(this).					
+				})
+			});
+			//document.getElementById('d1').innerHTML='#t1'
+		
+		</script>
+	</head>
+	<body>
+		<!-- 1번 -->
+		<p><h1 id='i1'> 이것은 p요소입니다. </h1>
+		<input id='btn1' type='button' value='감추기'>
+		<input id='btn2' type='button' value='보이기'>
+		<p>
+		
+		<!-- 2번 -->
+		<input type='text' id='t1'>
+		<div id='d1'></div>
+		
+	</body>
+</html>

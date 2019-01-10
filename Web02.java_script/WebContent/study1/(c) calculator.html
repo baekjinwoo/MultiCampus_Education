@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 계산기 </title>
+		<!-- prompt 3개 : 100 연산자 200 -->
+	</head>
+		
+	<body>
+		<script>
+		var x = prompt('첫번째 숫자');
+		var op = prompt('연산자(+-*/중 하나)'); //외의 연산자가 올경우는?
+		var y = prompt('두번째 숫자');
+		x= parseInt(x); //문자 -> 숫자
+		y= parseInt(y); //문자 -> 숫자
+		/* if( op === '+'){
+			document.write(x + op + y + "="+ (x+y));
+		}
+		if( op === '-'){
+			document.write(x + op + y + "="+ (x-y));
+		}
+		if( op === '*'){
+			document.write(x + op + y + "="+ (x*y));
+		}
+		if( op === '/'){
+			document.write(x + op + y + "="+ (x/y));
+		} */
+		
+		
+		dap = (op =="+"? x+y:
+					op=="-"?x-y:
+						op=="*"?x*y:
+							op=="/"?x/y:"none");
+		document.write(x + op + y +"="+ dap);
+		</script>
+	</body>
+</html>

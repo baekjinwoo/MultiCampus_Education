@@ -1,0 +1,35 @@
+<!-- idinput.html 파일에서 입력id가 java이거나 script이면 	-> xxx는 사용 가능합니다 -> xxx는 사용 불가능합니다  ->  창닫기 클릭하면 창 닫기-->
+<!-- close()하면 오버로딩으로 기존함수에 영향이 잇으니 쓰면안된다 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+
+
+
+	<body>
+		<div id='result'></div>
+		<input type=button value='창닫기' onclick='myclose()'> 
+		<script> 
+		function myclose(){
+			window.close();	 //현재창(새창 자식창) 닫기
+			//opener.close(); //부모창 닫기
+			}
+//내 창: window
+//내 부모창: opener
+			var id = opener.document.getElementById("id").value;
+			if (id == "java" || id == "script") {
+				var output = id + " 는 사용 가능합니다.";
+			} 
+			else {
+				var output = id + " 는 사용 불가능합니다.";
+			}
+			document.getElementById("result").innerHTML = output;
+
+			// 자바스크립트에서의 지역변수는 함수내에서 다 쓸 수 있다.
+			// 자바스크립트에서의 지역변수는 중복사용 또한 가능하다.
+		</script>
+    </body>
+</html>

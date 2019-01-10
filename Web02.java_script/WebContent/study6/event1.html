@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		window.onload = function (){
+			alert(1);
+			document.getElementById("msg").innerHTML
+			= "페이지 시작";
+		}
+		//1.onclick="a()"
+		//2.setTimeout(a, 2000)
+		//3.window.onload = a;
+
+		//document.getElementById('msg').innerHTML='페이지시작';
+		//msg가 만들어지기도 전에 dom문서에서 msg를 찾고잇기때문에 오류이다. 똑같은 문장을 아래에서 쓰면 오류없다. 
+		</script>
+	</head>	
+	
+	<body>
+		<div id='msg'> </div>
+	</body>
+</html> 

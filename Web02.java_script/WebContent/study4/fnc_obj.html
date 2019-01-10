@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//생성자함수
+var Employee = function(id, name, salary, dept){
+	this.id = id;
+	this.name = name;
+	this.salary = salary;
+	this.dept = dept;
+	this.time = new Date();
+	this.toString = function(){
+		return this.id + ":" + this.name
+		+ ":" + this.salary + ":"
+		+ this.dept + ":" 
+		+ this.time.toLocaleString();
+	}
+	
+}
+
+//함수처럼 호출 (new없음) ==> 실행하면 return값을 받아온다
+var emp_fnc=Employee(100,'이사원',56000,'인사부');
+	document.write(emp_fnc.id+"<br>");
+
+//객체생성 (new있음) ==> new에 의해 employee를 복사해서 새롭게 메모리 하나를 만들어줘
+var emp_obj= new Employee(200,'박사원',56000,'개발부');
+document.write(emp_obj.id+"<br>");
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 주소 공백 분할  </title>
+		<script>
+			function check(){
+				//주소 공백 분할 (____.value표현: input태그만)	
+				var addr= document.getElementById("addr").value;
+				var addrArray= addr.split("");
+				
+				document.getElementById("out").innerHTML=addrArray.join("<br>");
+			}
+		
+		//앞으로 주소를 나눠서 출력하려면 태그에 아이디를 주고-> 아이디를 읽어서 -> 영역을 지정해서-> 출력한다 
+//////////////////////////////////////////////////////////////////////////////////////////////////		
+			function changeStr(a, b){
+				a='자바';
+				b='자바스크립트';
+				
+			}
+			var s1="java";
+			var s2=new String("java"); //object
+			document.write(typeof(s1)+"<br>");  //String타입,  s2.객체소유메소드 사용가능
+			document.write(typeof(s2)+"<br>"); //object타입,   s1.메소드사용안되는데===> 가능하도록 됬다
+			
+			changeStr(s1,s2); //함수호출
+
+			document.write(s1+"<br>");
+			document.write(s2+"<br>");
+//////////////////////////////////////////////////////////////////////////////////////////////////	
+//////////////////////////////////////////////////////////////////////////////////////////////////		
+// 			function changeStr(a, b){
+// 				a='자바';
+// 				b='자바스크립트';
+// 				return a;
+// 			}
+					
+// 			var s1="java";
+// 			var s2=new String("java"); //object
+// 			document.write(typeof(s1)+"<br>");  //String타입,  s2.객체소유메소드 사용가능
+// 			document.write(typeof(s2)+"<br>"); //object타입,   s1.메소드사용안되는데===> 가능하도록 됬다
+			
+// 			s1= changeStr(s1,s2); //함수호출 바꾸기
+
+// 			document.write(s1+"<br>");
+// 			document.write(s2+"<br>");
+//////////////////////////////////////////////////////////////////////////////////////////////////
+	
+		</script>
+	</head>
+	
+	<body>
+		<input type=text id="in">
+		</br>
+		<input type=text id="addr">
+		<input type=button value="주소분할" onclick="check()">
+		<div id="out"> 검증되었습니다 </div>
+	
+	</body>
+</html>

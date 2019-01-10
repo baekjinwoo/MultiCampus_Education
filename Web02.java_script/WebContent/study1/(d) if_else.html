@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 조건문을 이용한 메뉴판 </title>
+	</head>
+	
+	<body>
+		<script>
+			var b ="<br>";	
+			var time = new Date().getSeconds();  //시간날짜중에서 getSeconds()을 통해 초만 추출한다 (초마다 아래의 조건문이 발동한다)
+			document.write(time+ b);
+			
+			//시간마다 메뉴를 바꾸는 홈페이지를 만들고자 한다
+			if(time<=11){
+				document.write("아침식사메뉴" +b);
+				document.write("1.계란후라이 씨리얼 우유" +b)
+			}
+			else if(time>11 && time <=16){
+				document.write("점심식사메뉴" +b);
+				document.write("2.파스타" +b);
+				document.write("3.스테이크" +b);
+			}
+			else if(time>16){
+				document.write("저녁식사메뉴" +b);
+				document.write("4.리조또" +b);
+				document.write("5.라면" +b);
+			}
+			document.write(b);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////			
+			var menu = prompt("메뉴 주문하세요(1~5)");
+			switch(menu){
+			case "1": document.write("계란후라이는 아침에 제공됩니다.");
+			case '2': document.write("파스타는 점심에 제공됩니다.");
+			case '3': document.write("스테이크는 점심에 제공됩니다.");
+			case '4': document.write("리조또는 저녁에 제공됩니다.");
+			case '5': document.write("라면은 저녁에 제공됩니다.");
+			}
+			
+		</script>
+	</body>
+</html>

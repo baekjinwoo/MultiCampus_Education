@@ -1,0 +1,76 @@
+<!-- http://hellogk.tistory.com/5 -->
+<!-- http://hellogk.tistory.com/96 -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 숙제 </title>
+		<script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready(function(){
+ 				//경고창출력_방법(1)
+				$('#btn').on('click',function(){
+					alert($('input:checkbox:checked').val()+" : "+$('#t1').val());   
+					});				
+					
+				//동시선택_방법(1)
+				$('#c1').on('click',function(){ //눌럿는데
+					if($('#c1').prop('checked')){ //참이면
+						$('input[name=cb]').prop('checked',true); //name이 cb인 것들은 prop('checked','true')된다
+					}
+					else{ //거짓이면
+						$('input[name=cb]').prop('checked',false);
+					}
+				});
+			});
+			
+				
+			
+				
+/* 			//동시선택_방법(2)
+			$("#btn").on('click', function(){
+				//checkbox 선택 value
+				var chk_val = "";
+				var chkArray = $("input:checkbox:checked");
+				for(var i = 0; i < chkArray.length; i++){
+					chk_val += 
+						$(chkArray[i]).val()+"==";
+				}
+				//+ text 입력 value 
+				var text =
+					$("input:text").val();
+				alert(chk_val + "--" + text);
+			});
+ 
+ 			//경고창출력_방법(2)
+			//모두 항목 클릭시 제목 내용 작성자 동시 선택/해제
+			$("input:checkbox:first").on('click', 
+			function(){
+			 if($(this).prop('checked') == true){
+				 //나머지 checkbox 선택
+				 $('input:checkbox').prop('checked', true);
+			 }
+			 else{
+				 $('input:checkbox').prop('checked', false); 
+			 }
+
+	});
+});//ready end
+
+*/
+
+		</script>
+	</head>
+	
+	<body>
+		<h1> 검색 대상과 검색어를 입력하세요 </h1>
+		<input type="checkbox" value='모두' id='c1'> 모두
+		<input type="checkbox" value='제목' id='c2' name='cb'> 제목
+		<input type="checkbox" value='내용' id='c3' name='cb'> 내용
+		<input type="checkbox" value='작성자' id='c4' name='cb'> 작성자
+		<input type='text' placeholder='검색어를 입력하세요' id='t1'> 
+		<input type='button' value='검색' id='btn'>
+		 	
+	</body>
+</html>

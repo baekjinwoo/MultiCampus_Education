@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>배열 </title>
+	</head>
+	
+	<body>
+		<script>
+			//4가지 입력: 사번, 이름, 급여, 부서명
+			var field= ['사번입력','이름입력','급여입력','부서명입력'];
+			var data=[];
+			var b= "<br>";
+
+// 			for(var i=0; i<4; i++){
+// 				document.write(field[i]+" : ");
+// 				var input = prompt();
+// 				document.write(input +b);
+// 			}
+			
+			for(var i in field){
+				data[i]=prompt(field[i]);
+				document.write(field[i]+":"+data[i] +b);
+				//data[j]대신에 j만 출력하면 인덱스값이 나온다
+			}
+			document.write(field.join('-'));
+
+			
+			
+			
+		</script>
+	</body>
+</html>

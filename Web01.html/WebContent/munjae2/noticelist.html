@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 게시판 </title>
+		<style> body{ background-color: #00ffcc text; text-align:center} 
+				h1{background-color:yellow; color:blue; text-align:center;}
+				#t1 { border: solid 3px red;}
+				p>a {color: white }
+				td{ text-decoration: :underline; border: dotted 3px olive; padding:10px, 0px}
+				table{
+					border: solid 1px aqua collapse;
+					width: 400px;
+					margin: auto;
+				}
+				
+		</style>
+	</head>
+	
+	
+	
+	<body>
+
+		<h1 name="name"> 내 사이트의 게시판  </h1>
+		<select name="menu"> <option> 제목 </option> <option> 내용 </option> <option> 모두 </option> </select>
+		<input type="text"/>
+		<input type="button" value="검색버튼"/>
+		
+		
+		<form action="none.jsp" enctype="multipart/form-data">
+		<table border="2" id="t1">
+			<tr><td>게시물1</td> <td><a href ="boarddetail.html"> 제목1 </a></td> <td> 작성자1 </td> <td> 조회수1 </td>
+			<tr><td>게시물2</td> <td><a href ="boarddetail.html"> 제목2 </a></td> <td> 작성자2 </td> <td> 조회수2 </td>
+			<tr><td>게시물3</td> <td><a href ="boarddetail.html"> 제목3 </a></td> <td> 작성자3 </td> <td> 조회수3 </td>
+			<tr><td>게시물4</td> <td><a href ="boarddetail.html"> 제목4 </a></td> <td> 작성자4 </td> <td> 조회수4 </td>
+			<tr><td>게시물5</td> <td><a href ="boarddetail.html"> 제목5 </a></td> <td> 작성자5 </td> <td> 조회수5 </td>
+			<tr><td>게시물1</td> <td><a href ="boarddetail.html"> 제목1 </a></td> <td> 작성자1 </td> <td> 조회수1 </td>
+			<tr><td>게시물2</td> <td><a href ="boarddetail.html"> 제목2 </a></td> <td> 작성자2 </td> <td> 조회수2 </td>
+			<tr><td>게시물3</td> <td><a href ="boarddetail.html"> 제목3 </a></td> <td> 작성자3 </td> <td> 조회수3 </td>
+			<tr><td>게시물4</td> <td><a href ="boarddetail.html"> 제목4 </a></td> <td> 작성자4 </td> <td> 조회수4 </td>
+			<tr><td>게시물5</td> <td><a href ="boarddetail.html"> 제목1 </a></td> <td> 작성자5 </td> <td> 조회수5 </td>
+		</table>
+		</form>
+		<p>
+		<a href ="noticewrite.html"> 글쓰기 </a></br>
+		<a href ="noticewrite.html" target="name" > 1  </a>
+	    <a href ="noticewrite.html" target="name" > 2  </a>
+	    <a href ="noticewrite.html" target="name" > 3  </a>
+	    <a href ="noticewrite.html" target="name" > 4  </a></p>
+	</body>
+</html>

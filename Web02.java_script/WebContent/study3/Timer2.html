@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			div{ background-color: green};
+		</style>
+	</head>
+	
+	<body>
+	<div id="here"> </div>
+		<script>
+			//시간을 출력합니다 => 1초마다 1번씩 변경. 15시 51분 37초
+			function timer(){
+				var now= new Date();
+				var divTag= document.getElementById("here");
+				divTag.innerHTML="<h1>"+ now.getHours()+"시 "+now.getMinutes()+"분 "+now.getSeconds()+"초 " +"</h1>";
+			}
+			
+			var id =setInterval(timer, 1000)   //1초마다 divTag.innerHTML를 실행하면, 1초마다 1초씩 바뀌게된다
+		</script>
+	</body>
+</html>

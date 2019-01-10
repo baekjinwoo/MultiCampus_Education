@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> jquery시작 </title>
+		
+		<!-- 1.설치 2.현재파일 jquery 사용을 선언. -->
+		<!-- jquery파일을 webContent에 넣어줘야 실행할 수 있다. -->
+		
+		<!-- <script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready(
+				function(){
+					$(selector).함수();
+					.....
+				}
+			);
+		</script> -->
+		
+		<script	src="jquery-3.2.1.min.js"></script>
+		<script>
+			//window.onload = $(document).ready
+			$(document).ready(function(){
+				alert(2);
+			});
+			
+			window.onload=function(){
+				alert(1);
+			}
+		</script>
+	</head>
+	<body></body>
+</html>

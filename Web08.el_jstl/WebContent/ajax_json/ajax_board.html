@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax와 json이용한 board (Ajax의 html코드)</title>
+<!-- 로그인형태는 { } -->
+<!-- 5개 가져오기는 [ {}, {} ... ] -->
+
+<!-- JSONARRAY는 key값으로 읽어옴 -->
+<!-- JSONOBJECT는 index값으로 읽어옴 -->
+
+<Style>
+	#id{
+		width:100%;
+		height: 50px;
+	}
+	#pw{
+		width: 100%;
+		height: 50px;
+	}
+	#s1{
+		background-color: silver;
+		width: 100%;
+		height: 50px;
+	}
+	#ajax_btn{
+		background-color: silver;
+		width: 100%;
+		height: 50px;
+	}
+</Style>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#ajax_btn").on('click', function(){
+		requestAjax();
+	});//on end
+	
+	$("div").on('click', 'a', function(ev){
+		ev.preventDefault();//a링크동작x
+		//alert($(this).prev().text());//<div><span id=seq> 1.. <a
+		//alert($(this).attr("id")); //5개의 a중 선택된 현재의 하나
+		$.ajax({
+			url: "ajax_boarddetail.jsp" ,
+			type: 'post' ,
+			//data : {"seq" : $("#seq").text()}, //0만출력
+
+			//data : {"seq" : $(this).prev().text()}, 
+		    data : {"seq" : $(this).attr("id")}, 
+		    dataType : 'text' ,
+		    success : function(server_result){
+				var server_json = JSON.parse(server_result);
+					var result =
+					server_json.seq +":" +
+					server_json.title +":" +
+					server_json.contents +":" +
+					server_json.writer +":" +
+					server_json.time +":" +
+					server_json.pw +":" +
+					server_json.view + "<br>";
+					$("#detail").html(result);
+				$("#detail").css("background-color", "green");
+				} ,
+		    //error : function(e){alert(e);} ,
+		    complete: function(){alert("기다리세요");}	
+		});//ajax end
+	});//on end //data도 json형태로 만들어서 전송해야한다.
+	
+	function requestAjax(){
+		$.ajax({
+			url: "ajax_boardlist.jsp" ,
+			type: 'post' ,
+		    //data : {'pagenum':page } ,
+		    data : $("#fm").serializeArray() , 
+		    dataType : 'text' ,
+		    success : function(server_result){
+		    	//배열[1,2,3,4,5개객체]
+		    	var server_json = JSON.parse(server_result);
+		    	for(var i = 0; i < server_json.length; i++){
+			    	var result =
+			    	"<span id='seq'>"+ server_json[i].seq +"</span>:" +
+			    	"<a href='ajax_boardlist.jsp' id='" +
+			    	server_json[i].seq+ "' >" +
+			    	server_json[i].title +"</a>:" +
+			    	//+ server_json[i].contents +":"
+			    	server_json[i].writer +":" +
+			    	server_json[i].time +":" +
+			    	server_json[i].pw +":" +
+			    	server_json[i].view + "<br>";
+		    		$("#result").html(
+		    			$("#result").html()+"<br>" + result);
+		    		}
+		    	$("#result").css("background-color", "yellow");
+		    } ,
+		    error : function(e){alert(e);} ,
+		    complete: function(){alert("서버통신완료!!");}
+		});//ajax end	
+	}//requestAjax end
+});//ready end
+</script>
+</head>
+<body>
+<!-- id;board pw;board 입력: 5개 게시물이 json으로 전달 (ajax방식으로) -->
+<form action="ajax_boardlist.jsp" method="post" id=fm>
+<center><h3>아이디:<input type=text id=id name=id></h3></center><br>
+<center><h3>암호:<input type="password" id=pw name=pw></h3></center><br>
+<center><input type="submit" value=로그인 id=s1></center> <!-- 기능이 정해져있음. Ajax통신을 할 수 없음. -->
+<center><input type="button" id=ajax_btn value=ajax게시물요청></center><br> <!-- 기능이 정해져있지않음. 무궁무진하게 설정가능 -->
+</form>
+
+<div id='result'
+style="text-align:center; background-color:aqua; border: aqua solid 3px;"> ajax 결과를 여기에 출력한다. </div><br>
+<div id='detail'
+style="text-align:center; color:red ; border: aqua solid 3px;"> 클릭한 제목의 글이 여기에 출력한다. </div>
+</body>
+</html>
+
+

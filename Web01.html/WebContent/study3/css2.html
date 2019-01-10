@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>폰트, 색상</title>
+		<!-- 외부경로 설정 -->
+		<link type="text/css" rel="stylesheet" href="css/mystyle.css"> 
+		
+		<!-- 위의 외부설정과, 아래의 내부설정중 우선순위는 내부설정이다 -->
+		<style> 
+			/* body{background-color:silver;} */ 
+			/* body{background-color:rgb(60%, 40%, 10%);} */ /* 갈 */
+/* 			body{background-color:rgb(153, 102, 25);} */ /* 갈 */
+			
+			/* body{background-color:rgb(255, 255, 255);} */ /* 흰 */
+			/* body{background-color:rgb(100%, 100%, 100%);} */ /* 흰 */
+			/* body{background-color:#ffffff;} */ /* 최대치;흰 */
+
+			/* body{background-color:rgb(0,0,0)} */ /* 검 */
+
+			body{
+				background-image:url("../image/google.png");  /*background-image는 원본이미지의 반복을 의미한다 */
+				background-repeat:no-repeat; /* 이미지를 반복하지 않을때 */
+				/* background-position: 100px 100px; */ /* 배경색상 위치 */
+         		background-position: 50% 50%;
+				background-attachment: scroll; /* 어덯게 부착될건지 */
+				background-
+			}
+				
+			p{ background-color: silver;
+				color:black; 
+			   font-size: 60px; 
+			   /* font-family: sans-serif; */ /* 궁서-굴림 */
+			   font-family:cursive;
+			   font-style: italic;
+			   text-align: center;
+			   text-transform: capitalize;
+			   text-shadow: 5px 5px 10px aqua;
+			  
+			  
+			  /* 방법으로는 p157로도 할 수 있다 */ 
+			   /* 낱개로 지정 */
+			  /*  border-top:solid;
+			   border-bottom:dotted;
+			   border-left:dashed;
+			   border-right:outset; */
+			   
+			   /* 전체공통 지정 */
+			   border-style: solid;
+			   border-color:red;
+			   border-width: 3px;
+			   border-radius: 25px; /* 둥글게 */
+			   box-shadow: 10px 10px 5px black;
+			   padding: 10px 20px; /* 상하 좌우 */
+			   }
+			   
+			   div{
+			   width:100px;
+			   height:50px; /* 영역지정 */
+			   padding: 20px;
+			   	border:solid 3px green;
+			   	background-color: yellow; 
+			   	resize:both; /* 상하좌우 다 가능하다 */
+			   	overflow:auto; /* 콘텐츠 자동 스크롤바 설정 */
+			   	/* margin: 10px 15px 20px 25px; /* 상 우 하 좌 */ /* 왼쪽을 25공간띄우고  상자사이 20아래로. */
+			    margin: 10px auto; /* 상하 좌우, 상하의 마진은 10px이고 좌우는 50%같은 퍼센트보다는 auto가 훨씬 효율성있다 */ 
+			   } 
+			   span{
+			   	border:solid 3px blue;
+			   	background-color: red; 
+			   	resize:both; /* 상하좌우 다 가능하다 */
+			   	overflow:auto; 
+			   }
+				a:link{ color:red; text-decoration:none;}
+				a:visited{ color:green; }
+				a:HOVER{ cursor:progress; color: yellow; }
+				/* 유사선택자 = 의사선택자 = 없는데, 가상으로 */
+				
+				
+							
+			h1{color:white; font-family:맑은고딕;  font-size: 32px;  font-style:italic;  font-weight:bold; text-align:center; background-color:maroon;}  /* 많이 사용되는 CSS속성들의 예 */
+		</style> 
+	</head>
+	
+	<body>
+		<!-- <img src="../image/3.png" alt="액박떳음"> -->
+		<h1><a href="../image/google.png"> 링크이동  </a></h1> <!-- 없는 파일을 경로에 넣으면 link색상이 안바뀐다 -->
+		<!-- <h1><a href="b.html"> 링크이동  </a></h1>   --><!-- 없는 파일을 경로에 넣으면 link색상이 안바뀐다 -->
+		
+	
+	
+		<h1> h1 제목입니다</h1>
+		
+		<div>여기는 div내부입니다</div>
+		<div>여기는 div내부입니다2</div></br>
+		
+		<span> 여기는 span내부입니다</span>
+		<span> 여기는 span내부입니다2</span>
+
+	<p> p 본문입니다 this is body</p>
+
+	</body>
+</html>

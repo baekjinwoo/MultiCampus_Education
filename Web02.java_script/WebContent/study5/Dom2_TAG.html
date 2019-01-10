@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!-- HTML태그변경 (1) 태그문자열 변경
+		 <2개 함수 작성>
+		 getDiv() 매개변수
+		 div태그 문자열 alert출력
+		 리턴값
+				
+		 setDiv() 매개변수
+		 문자열 전달받아서 div태그 내부 변경
+		 리턴값 -->
+	<head>
+		<meta charset="UTF-8">
+		<title> dom </title>
+		<style>
+			div{
+				background-color: pink;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>여기는  div 태그입니다</div>
+		<input type=button value='내용확인' onclick="getDiv()">	
+		<input type=button value='내용변경' onclick="setDiv('div 태그를 변경합니다')">	
+		
+		<script>
+		function getDiv(){
+		var divlist = document.getElementsByTagName('div');
+		alert(divlist[0].innerHTML); //왜 divlist[0].value안되지? undefined나옴, innerHtml도안됨
+		divlist[0].style.backgroundColor= 'yellow';
+		//바로 화면이 바뀌니까 리턴값 필요없다.
+		}
+		function setDiv(newText){
+			var divlist= document.getElementsByTagName('div');
+			divlist[0].innerHTML=newText;
+			divlist[0].style="background-color: orange";
+		//바로 화면이 바뀌니까 리턴값 필요없다.
+		}
+		</script>
+	</body>
+</html>

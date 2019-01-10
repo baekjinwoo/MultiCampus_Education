@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+
+	<body>
+	
+	<!-- form action을 작성해야지 pattern을 거쳐서 자바스크립트로 전송된다.  -->
+	<form action="html5.jsp"> 
+		<h1 align="center"> 이메일</h1>
+		<table border="3" align="center">
+			<tr><td> 작성자 </td> <td colspan="3"><input type="email" pattern="^[a-zA-Z][a-zA-Z0-9]*@[a-zA-Z0-9]\.(com|arg|net)" placeholder="이메일형식을 작성하시오 " title="####@####.###"/></td>
+			<tr><td> 받는이 </td> <td colspan="3"><input type="email" pattern="^[a-zA-Z][a-zA-Z0-9]*@[a-zA-Z0-9]\.(com|arg|net)" placeholder="이메일형식을 작성하시오" title="####@####.###"/></td>
+			<tr><td> 참조 </td> <td colspan="3"><input type="text"/></td>
+		</table>
+	</form>
+		<input type="submit" value="전송" >
+	
+
+
+
+	</body>
+</html>

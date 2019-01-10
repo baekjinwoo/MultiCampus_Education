@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> login </title>
+	</head>
+	<body>
+	
+	<!-- <fomm action="request.multi"> ==> 앞에 url이 똑같다면, 다 지우고, request.multi.html ==> 상대경로  -->
+	<!-- <fomm action="/myservlet/request.multi"> ==> 처음/는 서버가 같다는 의미. 상대경로-->
+	<!-- <fomm action="http://localhost:9090/myservlet/request.multi"> ==> 절대경로 -->
+	
+	<!-- 현재파일 같은 url 경로: url mapping -->
+	<!-- 현재 동일 서버:/프로젝트명/servlet url -->
+	<!-- 절대경로: http://... -->
+	
+<!-- 두번쨰. form태그를 이용해서 입력받는 방법 -->
+<!-- form을 이용해서 입력할때 공백을 넣으면 어떻게 되는지? url은공백이 없지않나? 공백을 넣으면 +덧셈기호로 바뀐다 -->
+<!-- text만 한글이고, 암호는 무조건 영문자로 전송된다. -->	
+<!-- 한글데이터는 %로 인코딩되서 url에 전송되고, 숫자와 영문자는 +로 공백처리된다 -->		<!-- form태그의 default값은 get방식이기때문에 post는 지정해야한다 -->
+	<form action="http://localhost:9090/myservlet/request.multi" method="post"> <!-- 입력한 태그를 다른 곳으로 전송하기 위해 사용하는 태그 -->
+		<h1> 로그인하세요 </h1>
+		아이디입력: <input type=text name='id'><br>
+		암호입력: <input type=password name='pw'><br>
+		<input type=submit value='전송'> <!-- submit을 누르면 데이터가 엑션쪽으로 전송된다. 따라서 submit도 무조건 필수 -->
+	</form>							    <!-- submit쪽으로 데이터를 전송할떄는 id값을 주지말고, name값을 줘야한다. -->
+			
+	</body>
+</html>

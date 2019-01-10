@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 돔</title>
+<script>
+
+//함수 매개변수 0개 정의:호출 0,1,2,3,4개이상 인수 전달
+//호출 실제 전달 인수 갯수:arguments
+//배열 : 키워드 : 현재 함수 실제 전달 인수 배열
+
+	var cntOfClick = -1;
+	function setImage(image) {
+		var imgTag = document.getElementById("i");
+		imgTag.src = images;
+		imgTag.width = '150px';
+	}
+
+	
+	function setImage() {  		//자바처럼 오버로딩이 되지 않기때문에 setImage()와 setImage(~~~~)를 구분하기 위해서 arguments의 length개수가 몇개인지에 따라서 결정헌다.
+		if (arguments.length == 1) {
+			var imgTag = document.getElementById("i");
+			imgTag.src = arguments[0];
+			//imgTag.style.width = '150px';
+			imgTag.width = 150;
+		}
+		
+		else {
+			cntOfClick++;
+			var imgArray = [ '1.jpg', '2.jpg','chrome.jpg', 'google.png' ];
+			var imgTag = document.getElementById("i");
+			if (cntOfClick == imgArray.length) {
+				cntOfClick = 0;
+			}
+			imgTag.src = "../images/" + imgArray[cntOfClick];
+			//alert(cntOfClick);
+		}//else end
+	}
+</script>
+</head>
+<body>
+
+
+	<img id="i" src="images/google.png" width=100px height=50px alt="이미안보임">
+	<INPUT TYPE=BUTTON VALUE="이미지변경" onclick="setImage('../images/1.jpg')">
+	<INPUT TYPE=BUTTON VALUE="이미지계속변경" onclick="setImage()">
+	<!-- setImage()
+var imageArray =
+['americano.jpg','google.png','cafelatte.jpg'];
+var count = 0;
+count++;
+
+ -->
+</body>
+</html>

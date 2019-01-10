@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready(	function(){
+				//img 태그 생성 - 추가
+				var newimg= "<img src='../image/google.png'>";
+				//$('body').append (newimg);  //(앞).append(뒤) == 앞 뒤
+				//$('body').append (newimg); //(앞).prepend(뒤) == 뒤 앞
+				//$('img').after (newimg);  //(앞).after(뒤) == 앞 뒤
+				$('img').before (newimg); //(앞).after(뒤) == 뒤 앞
+				
+				//$('img:first').before(newimg); //img태그가 여러개 있을 수 있으니까 첫 번째 img태그
+				//$('img:second').before(newimg); //img태그가 여러개 있을 수 있으니까 두 번쨰 img태그
+				
+				$('img').css('width','200px');
+				$('img').css('width','150px');
+				
+			});
+		</script>
+	</head>
+
+
+
+	
+	<body>
+		<img src='../image/1.jpg'>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>날짜 시간 객체</title>
+	</head>
+	
+	<body>
+	<input type="datetime-local" id="input">
+	<input type="button" value="유효검사" onclick="check()">
+	
+		<script>
+		 function check(){
+			 //1.날짜시간 입력 정보
+			var time = 
+			document.getElementById("input").value;
+			var timeobj = new Date(time); 
+			var now2 = new Date();
+			// Date객체-- 1/1000초단위
+			var diff = timeobj.getTime() - now2.getTime();
+			diff = diff / (1000 * 60 * 60 * 24) ;
+			alert(diff);//일단위
+			// 도서 반납한 일 : timeobj
+			// 현재일 now2
+			if(diff > 0) {
+				document.write(
+				"<h1>반납일이 " + 
+				parseInt(diff) + " 일 남았습니다</h1>");	
+			}
+			else if(diff == 0 || diff == -1){
+				document.write(
+				"<h1>반납일은 바로 오늘입니다!!!</h1>");
+			}
+			else {
+				document.write(
+				"<h1>반납일이 " + 
+				parseInt(diff) + " 일 경과되었습니다</h1>");
+			}
+			document.write("<h1>" 
+				+ timeobj.toLocaleDateString() 
+				+ "</h1>"); 
+		 }//함수정의
+
+
+			var b="<br>";
+			var now = new Date();
+			document.write(b+ now +b);
+			document.write(now.toString() +b);
+			document.write(now.toLocaleDateString() +b);
+			document.write(now.toDateString() +b);
+			document.write(now.toTimeString() +b);
+			document.write("<hr>");			
+			
+			document.write(now.getFullYear()+"년"+b);
+			document.write(now.getMonth()+"월"+b);
+			//일-월-화-수-목-금-토
+			var day=['일','월','화','수','목','금','토'];
+				document.write(day[now.getDay()]+"요일"+b);
+
+			document.write(day[now.getDay()]+"일"+b);
+			document.write(now.getHours()+"시"+b);
+			document.write(now.getMinutes()+"분"+b);
+			document.write(now.getSeconds()+"초"+b);
+			document.write("<hr>");			
+///////////////////////////////////////////////////////////////////////////////////////////////
+			//1월-12월: 0-11이다.
+			//시간: 0-23, 0-59, 0-59
+			//1,31은  => 2월  31일이니까  => 3월 3일이다.
+			var date1= new Date(2018,1,31,12,34,56);
+			document.write(date1.toLocaleString() +b);//2018/03/03
+			
+		</script>
+	</body>
+</html>

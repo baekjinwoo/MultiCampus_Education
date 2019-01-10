@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> input_로그인창</title>
+	     <style> body{ background-color: #E6B36D; } </style> 
+	</head>
+	<body align="center">
+		<!--1번 -->
+		<div style="border: white 10px solid"> 
+		<h1> 로그인부터 하세요</h1>
+		<p>아이디입력: <input type="text size=5" style="background-color:#C1CDCD"/></p>
+		<p>암호입력: <input type="password" style="background-color:#C1CDCD"/></p>
+		<p><input type="button" value="로그인버튼"/></p>
+		</div>
+		
+<hr>    <!--2번 -->
+		<form action="none.jsp" enctype="multipart/form-data">
+		<h1> 로그인부터 하세요</h1>
+		<table border="2" width=50% height=50% align="center">
+			<tr>
+				<td>아이디입력 </td>
+				<td><input type="text" style="background-color:#C1CDCD" name="id" placeholder="8자리가능" required="required"/></td>
+				<td rowspan="2"><input type="button" name="id" value="로그인버튼"/></td>
+			<tr>
+				<td>암호입력 </td>
+				<td><input type="password" name="pw" style="background-color:#C1CDCD"/></td>
+			
+			<tr><td><input type="hidden" value="asg"/></td>
+			
+			<tr><td> 추가정보 : 성별선택 </td>
+				<td colspan="3"><input type="radio" name="gender"/> 남자  <input type="radio" name="gender"/> 여자</td>
+				
+			<tr><td> 추가정보 : 자신있는 과목(복수)) </td>
+				<td colspan="3"> <input type="checkbox" name="subjeck"/> java 
+								 <input type="checkbox" name="subjeck"/> oracle
+								 <input type="checkbox" name="subjeck"/> html
+								 <input type="checkbox" name="subjeck"/> jquery </td>
+			<tr><td> 파일 업로드 </td>
+				<td><input type=file name="f" style="background-color:#C1CDCD"/></td>
+				
+			<tr><td><textarea cols=50 rows="5" style="background-color:#C1CDCD"> 여기에 작성하세요</textarea></td>
+				<td><select name="menu" multiple="multiple">
+						<option> 짜장면 </option>
+						<option> 짬뽕 </option>
+						<option> 밥 </option>
+						<option> 라면 </option>
+						<option selected> 순두부  </option>
+						<option> 탕수육 </option>
+						<option> 돼지 </option>
+						<option> 닭 </option>
+					</select>
+			<tr><td><input type="submit" value="서브밋버튼"/></td>
+				<td><input type="image" src="../thumbnails/google.png"/></td>
+				<td><input type="reset" value="입력값초기화버튼"></td>
+				
+		</table>
+		</form>
+<hr>	<!--3번 -->
+<br>
+	<div style="border: white 10px solid"> 
+		<form action="html5.jsp"> <!-- html5로 전송한다고 가정한다 -->
+<br>		
+			지역날짜 : <input type="datetime-local"></br>
+			날짜시간 : <input type="datetime"></br>
+			날짜 : <input type="date"></br>
+			시간 : <input type="time"></br>
+			
+			색상 : <input type="color"></br>
+			주 : <input type="week"></br>
+			월 : <input type="month"></br>
+			일 : <input type="date"></br>
+			
+			범위 : <input type="range" min=1 max=10 value=7></br> <!-- 7정도에 있다 -->
+			숫자 : <input type="number" max=20 step=3 value=3></br> <!-- value 현재는 3부터시작 -->
+																	   <!-- 3자리~4자리 -->
+			번호입력: <input type="phone" pattern="^(010|011|016|019)-[0-9]{3,4}-[0-9]{4}$" title="###-####-####"></br>
+			이메일 : <input type="email" pattern="^\W{1,}[A-Za-z-0-9] *@ [A-Za-z-0-9] +\.(com|org|net)"></br>
+			홈피주소 : <input type="url" pattern= http[s]{0,1}://\w+(\.\w+)*$></br>
+															<!-- 문자.문자를 반복 -->
+															<!-- http://www.multicampus.co.kr -->
+															<!-- http://www.naver.com -->
+															<!-- http://www.multicampus-->
+			<input type=submit value="전송">
+		</form>
+<br>		
+	</div>
+				
+			
+	
+	
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 게시물 작성 </title>
+		<style> body{ background-color: #00ffcc; } </style>
+	</head>
+	
+	<body>
+		<form action="none.jsp" enctype="multipart/form-data">
+		<table align="center">
+			<tr><td name="name"> 제목   <input type="text"/></td> 
+			<tr><td> 내용  <textarea type="textarea" cols=50 rows=10></textarea></td>	 
+			<tr><td> 작성자 <input type="text"/></td>
+			<tr><td> 암호 <input type="password"/></td>	
+			<tr><td> 시간 <input type="datetime-local"/></td> 
+			<tr><td><input type="submit" value="저장버튼" style="background-color:#ffcc00"/>
+			<input type="reset" value="취소버튼" style="background-color:#ffcc00"/>
+		</table>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>Insert title here</title>
+		<script 
+		src="http://maps.google.com/maps/api/js?key=AIzaSyBuMhc367ia1i3QryuC2LLtWT5WnSSNwF8"></script> 
+		<script src="jquery-3.2.1.min.js"></script>  <!--  jquery이용하려고 -->
+		
+		<script >
+		$(document).ready (
+		function(){
+		var watchID; //전역변수					
+		$('#start').on('click',function(){		//(maximumAge: 오래된거 말고 가장 최근정보를 가져와라)
+			watchID=							//( enableHighAccuracy: 최대한 정확도를 높게 받을 것인지를 지시하는 불리언 값입니다.)
+			navigator.geolocation.watchPosition(success, error, {enableHighAccuracy:true, maximumAge:0});
+						
+			
+		})// start on end
+		$('#stop').on('click',function(){
+			navigator.geolocation.clearWatch(watchID); //멈추게 할 것  //explor11는 clearwatch가 안되나?
+			$('#result').html('위치추적을 중단합니다.'); //라는 문구를 넣는다.
+			
+			})//stop on end
+		}); //ready end
+
+<!--------------------------------------------------------------------------------------------------------------->
+		
+		function success(p){ //위치저장객체_1
+			var lat= p.coords.latitude //위도 저장
+			var lon= p.coords.longitude; //경도 저장
+			$('#result').text('나의위도='+lat+'나의 경도='+lon);
+			//지도로 출력								// jquery를 지원하지 못하기에 dom을 쓴다.	
+			var center=
+			new google.maps.LatLng(lat, lon); //나의 위도와 경도를 구글맵에 가져가서 LatLng위치를  만들어라. (매개변수를 직접 좌표를 적어줘도된다)
+			
+			map = new google.maps.Map(document.getElementById('map'), // google.maps패키지안의 Map의 객체를 하나 만들어서 --> 변수 map에 저장해라
+		  { mapTypeId:google.maps.MapTypeId.ROADMAP,
+			zoom:17, center : center //(1: 전세계 다 나타나도록   10: 조그마한 시   13~17: 하나의 구   20: 동)
+			});
+	
+			marker = new google.maps.Marker( //지도위에 내 현재위치를 표시하기 위한 marker객체_2를 생성
+				{ position:center, title:'현재나', map:map}	
+			);
+		}//success end
+
+<!--------------------------------------------------------------------------------------------------------------->
+		function error(e){ //오류객체_ 3
+			$('#result').html(e.code+":"+e.message);
+		}
+		
+		</script>
+	</head>
+	
+	
+	<body>
+		<button id="start"> 위치확인시작 </button>
+		<button id="stop"> 위치확인중단 </button>
+		<div id="result" > </div>
+		<div id='map' style="width: 1024px; height: 600px">
+		 맵 로딩 예정입니다. </div>
+	</body>
+</html>

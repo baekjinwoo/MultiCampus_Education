@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+	<title> 값의 자료형, 출력 </title>
+	
+	</head>
+	<body>
+		<script type="text/javascript">
+		var i = 100;
+		document.write(i+"<br>");
+		var j;
+		document.write(j+"<br>"); /* 오류코드 : 변수값이 없기때문에 undefined가 출력된다 */
+		document.write(i+j+"<br>"); /* 오류코드 */
+		/* <br>을 작성함으로써, 개행처리 */
+		
+/* 		var k; //종류, 값 미정
+		k=100;
+		k=3.14;
+		k="javascript" 	*/
+ 	
+		var x = 'html';
+		var b = "<br>";
+		document.write(typeof(x)+b); //타입의 자료형을 알 수 있다
+		x=100;
+		document.write(typeof(x)+b);
+		x=3.14;
+		document.write(typeof x+b);
+		
+		x=true;
+		document.write(typeof x + b);
+		x=function(){}
+		document.write(typeof x + b);
+		//x={a:100;}
+		//document.write(typeof x + b);
+		x=new Array();
+		document.write(typeof x + b);
+		
+		//java언어는 정수<==정수+정수이고, 연산이 두 개 이상일 경우는 괄호()를 사용해야한다
+		//java의 String과 같은 메서드를 사용한다		
+		var a=100;
+		var b=3;
+		document.write((a/b) + b);
+		document.write((a>b) + b);
+		var s= 'oracle ja va script';
+		document.write(s.length);
+		document.write(s.charAt());
+		document.write(s.toUpperCase());
+		document.write(s.indexOf('script', 0),+ b); //0~끝까지중에서 script가 몇 번인덱스에 위치하니?
+		document.write(s.charAt(5)+ b);
+		
+	
+		document.writeln("오잉?")
+	
+		</script>
+	</body>
+</html>

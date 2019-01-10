@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 함수 문법 </title>
+	</head>
+	
+	<body>
+		<script>
+			var b="<br>";
+		
+			//1. 함수 호출
+			function f1(x, y){			//int m1(int x, int y){
+				return x * y;			//	return x * y;
+			}							//}
+
+			//2. 함수 실행 : f1의 매개변수가 2개라면 기본적으로 ==> 함수호출할떄 인자값은 2개이상이여야한다.
+			document.write(f1(2,5,5) +b);
+			document.write(f1(2.56,3.14) +b);
+			document.write(f1('java','script') +b); //문자나 부울식은 연산불가능하다
+			
+		</script>
+	</body>
+</html>

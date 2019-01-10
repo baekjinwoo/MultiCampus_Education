@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style> 
+			div{ background-color: red}
+		</style>
+	</head>
+	
+	<body>
+		<div id="here"> </div>
+		
+		<script> 
+		function timer(){
+			var divTag= document.getElementById("here");
+			divTag.innerHTML+="<h1> 보입니다 </h1>"; //반복할때마다 +=에의해서 늘어난다
+			}
+		
+		/* 1. 자바스크립트 함수 호출;
+		2. html 태그 클릭시 함수 호출;
+		
+		3. 특정시간 경과 함수 호출 */
+		//setTimeout(timer, 5000); //5초가 지나면 타이며 함수를 호출한다	 (1번 실행종료)
+		var id =setInterval(timer, 1000)   //1초마다 반복실행
+		setTimeout(function() {clearInterval(id)}, 10000); //10초마다 clearInterval로 종료해
+		</script>
+		
+		</body>
+</html>

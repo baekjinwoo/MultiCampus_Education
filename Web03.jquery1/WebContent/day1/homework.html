@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> jquery를 이용한 radio </title>
+		<script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready( 
+				function(){
+					
+					$('#color1').on('click', function(){
+						//document.write('fdsfsdfsd'); test용으로 radio가 클릭되면 출력되도록
+						$('#b1').css('background','aqua');
+					});
+					
+					$('#color2').on('click', function(){
+						$('#b1').css("background","lightgreen");
+					}); 
+			
+			} );
+			
+// 			$(document).ready( 
+// 				function(){
+// 					$('#color1').on('click', function(){
+// 						var col=$(this).val();
+// 						changeColor(col); 
+// 					});
+				
+// 					$('#color2').on('click', function(){
+// 						var col=$(this).val();
+// 						changeColor(col); 
+// 					});
+				
+							
+// 				function changeColor(color){
+// 					$('body').css('background-color',color);
+// 				}	
+// 			} );
+
+			
+			
+			
+		</script>
+		<style>
+			#b1{
+				background-color:yellow;
+			}
+		</style>
+	</head>
+	
+	<body id='b1'>
+		<input id='color1' type="radio" value="aqua" name='color'> 파랑색
+		<input id='color2' type="radio" value="lightgreen" name='color' > 녹색
+	
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<script>
+		//car라는 객체를 정의문장 (함수형태로)
+			function car(model, speed, color){
+				this.model=model;
+				this.speed=speed;
+				this.color=color;
+				this.brake=function(){this.speed-=10;}
+				this.excel=function(){this.speed+=10;}
+				
+				this.toString= function(){
+					return this.model + "차종은" + 
+					   this.color + "색상을 가지고 "+ 
+					   this.speed + "속도를 낸다"+"<br>";					
+				}
+			}
+		
+			var car1 = new car('7301',100,'red');
+			document.write(car1);
+// 			document.write(car1.model + "차종은" + 
+// 						   car1.color + "색상을 가지고 "+ 
+// 						   car1.speed + "속도를 낸다"+"<br>");
+			
+			car1.excel();
+			car1.excel();
+			document.write(car1);
+// 			document.write(car1.model + "차종은" + 
+// 					   car1.color + "색상을 가지고 "+ 
+// 					   car1.speed + "속도를 낸다"+"<br>");
+			
+			car1.brake();
+			car1.brake();
+			car1.brake();
+			car1.brake();
+			car1.brake();
+			car1.color="white";
+			document.write(car1);
+// 			document.write(car1.model + "차종은" + 
+// 					   car1.color + "색상을 가지고 "+
+// 					   car1.speed + "속도를 낸다"+"<br>");
+			
+			
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+			var car2 = new car('audi500',150,'black');
+			document.write(car2);
+			//car1에만 추가된 메소드정의
+			car1.only=function(){ //car1에만 only가 있다 (car1.only는 선언과 동시에 function을 선언한다는 것을 의미한다)
+				document.write(car1.model); //(car2.model)로 쓸 수 있다. (car1.only= this.only)로 쓸 수 있다.
+			}//함수정의
+			
+			car1.only(); //함수호출   
+			//car2.only(); //car2에는 없음 XXX
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+			//car2만 추가변수
+			car2.company='아우디';
+			document.write(car2.company);
+			//document.write(car1.company); //car1에는 없음 XXX
+			
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+			//car1, car2, Car타입 생성 모든 객체들 공통적
+			//모든 메소드는 메소드 정의와 호출이 있어야 실행할 수 있다.
+			//메소드 정의
+			car.prototype.all=function(){ //prototype은 메소드가 아니라 클래스car를 써줘야한다.
+				document.write("all");
+			}
+			
+			//메소드 호출
+			car1.all(); 
+			car2.all(); 
+			
+			
+			var i= function(){this.a=100;}; //생성자함수
+			var ii= new i(); //i 생성자함수로 ==> ii객체를 생성
+			
+			document.write("<br>"+typeof(ii)); //타입을 보여준다
+			document.write("<br>"+ii.constructor); //생성자함수를 보여준다
+		
+			</script>
+	</body>
+</html>

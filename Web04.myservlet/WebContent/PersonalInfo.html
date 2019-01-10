@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 개인정보 창 </title>
+	</head>
+	<body>
+	<h1> 개인정보 입력</h1> <!-- 또는 person만  -->
+	<form action='http://localhost:9090/myservlet/person' method="post"><br> 
+	이름: <input type='text' name='name'><br>	
+	아이디: <input type='text' name='id'><br>
+	비번: <input type="password" name='pw'><br>
+	성별 : <input type="radio" name='gender' value='남자'>남자
+		 <input type="radio" name='gender' value='여자'>여자<br>
+
+	메일수신여부 : <input type="checkbox" name='mailing' value='광고'> 광고메일
+			  <input type="checkbox" name='mailing' value='공지'> 공지메일
+			  <input type="checkbox" name='mailing' value='배송'> 배송확인메일<br>
+	직업: <select name='job'>
+		<option >회사원</option> <!-- select일경우에는 option안에 값이 value가 된다. value는 출력되는 값이다. -->
+		<option>대학생</option>
+		<option>유치원생</option>
+	</select><br>
+	
+	<input type='submit' value='전송'><br> <!-- submit을 누르면 form의 경로로 get방식을 통해 전송된다. -->
+	</form>
+	</body>
+</html>

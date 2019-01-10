@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Dom1 </title>
+	</head>
+	
+	<body>
+		<h1> 쇼핑 목록</h1>
+		<h3> 마트에서 사야 할 목록 </h3>
+		<ul id="mart">
+		<li> 우동 </li>
+		<li> 하드 </li>
+		<li> 맥주 </li>  <!-- <li> innerHTML </li> -->
+		</ul>
+		
+		
+	<!-- 1. 사용자 입력   2. 다른 파일 전송이전에 입력확인(검토) : myprocess를 쓰는 이유 -->	
+	<form name="f1" action="exam.jsp"> <!-- other.jsp파일에 입력을 전송하겠다 -->
+	<input type=text id="i1" name="n1"> <!-- 입력받는 값 (1개이상가능) --> <!-- 값의 저장은 id가 아니고, name에서 한다. name=n은 변수명이다 -->
+	<input type=password id="i2" name="n2">
+	<input type=submit value="전송" onclick="myprocess()"> 	<!-- 반드시 전송할때 submit타입으로 해야 입력데이터를 전송한다 -->
+								   <!-- myprocess를 함으로써, (submit의 내장기능)기본동작하지말고 myprocess로  다른기능이 실행된다. 따라서 button과도 같아진다 -->
+	</form>
+	
+	
+		<script>
+		function myprocess(){
+			alert(document.f1.n1.value); /* 이 표현은 태그들마다 이름이 다 붙어야하기때문에 잘 안쓴다 .계층구조1 */
+			alert(document.f1.n2.value);
+			var nodelist= /*배열2 */
+				document.getElementsByName('n1');
+			alert(nodelist[0].value);
+		}
+		
+		//id값으로
+		//UL자식
+		var mart = document.getElementById("mart")
+		var martArray = mart.childNodes; //id를 통해서 ul을  저장했다면 ==> ul 자식노드를 보여줘   //
+			//자식노드(텍스트0, 태그1, 속성2)중 태그(=요소노드)
+			for(var i=0; i<martArray.length; i++){
+				if(martArray[i].nodeType==1){ //노드타입이 1이면 == 태그타입이면, 개행과 ul은 빼고 li만
+					martArray[1].innerHTML="설렁탕"; //총 공백포함 7개중에서 => 공백포함하면 우동은 1 하드는 3 맥주는 5인덱스이다. innerHTML을 이용하는 코드는 익숙해져야한다. +=를 쓰면 이전의 값을 없애지않고 누적할 수 있다
+					document.write(martArray[i] //martArray[i]를 출력해보면 객체로 쓰임을 알 수있다.
+						+ martArray[i].nodeName+ ":"
+						+ martArray[i].nodeType+ "<="
+						+ martArray[i].innerHTML+ "<br>");
+				}
+			}
+		
+		//태그이름으로 
+		//LI 태그부터
+		var lilist = document.getElementsByTagName("li");   //elementsbytagname은 배열처럼 사용해야된다는 주의점만 빼면 엄청 편하다
+		for(var i=0; i<lilist.length; i++){
+			document.write(lilist[i].innerHTML+"<br>");
+		}			
+		</script>	
+	</body>
+</html>

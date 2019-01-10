@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 회원가입 </title>
+	</head>
+	<body>
+	<form action='http://localhost:9090/myjsp/user1' method="get"> 
+		<h1> 정보입력 </h1>
+		아이디입력: <input type='text' name='id'><br>
+		이름입력: 	<input type='text' name='name'><br>
+		암호입력: <input type='password' name='pw'><br>
+		메일입력: <input type='text' name='email' pattern='^[0-9a-zA-Z]{1,10}@[0-9a-zA-Z]+\.(com||net||org)$'><br>
+		연락처입력:	<input type='text' name='phone'><br>
+		<input type=submit value='전송'>
+	</form>
+	</body>
+</html>
+

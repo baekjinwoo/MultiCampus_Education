@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 2중 반복문을 이용한 구구단테이블 </title>
+		<style>
+			table{ /*외곽선:  전체선 */
+				border: aqua solid 3px;
+				margin: 0 auto;  /* 상하 0 좌우중앙정렬 */
+				background-color:pink; 
+				}
+			td{ /*내부선:  행마다 낱개선  */
+				border: black solid 1px;
+			}
+			h1{
+				text-align: center;
+				background-color: silver;
+			}
+		</style>
+	</head>
+	
+<!-- 	사용자 입력: 3-3단 제외 나머지 단 출력 -->
+<!-- 	2-9: 범위 외의 입력: 해당단은 없습니다 -->
+	
+	<body>
+		<h1> 구구단 출력 </h1>
+		<table>
+		<script>
+		var input = prompt("출력을 제외할 단을 입력하세요");
+		if(input>9||input<2){
+			document.write("<h3>해당단은 없습니다</h3>");
+		}
+		else{
+			var b = "<br>";
+			for(var i=1; i<10; i++){
+					document.write("<tr>");
+				  //document.write(i+'행입니다' +b);
+				for(var j=1; j<10; j++){
+					if(j==input){ continue; } //break;를 쓰면 그 이후부터 반복안함
+					var mun1= i+'*'+j+'=';
+					var mun2= i*j;
+					var dap= "<td>"+mun1+mun2+"</td>";
+					document.write(dap);
+				}
+				//document.write(b);
+			}
+		}
+		</script>
+		</table>	
+	</body>
+</html>
+

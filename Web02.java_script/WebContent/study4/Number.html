@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 다양한 객체 </title>
+	</head>
+	
+	<body>
+	<script>
+		//Number 1
+			var i = 123.456; //문자로받은 것을
+			i = parseInt(i);//숫자로 ㅎ변환
+			document.write(i+"<br>");
+			
+		//Number 2	
+			var j=new Number(123.456);
+			document.write((j.toFixed(2))+"<br>")
+			
+			var k = 123.456
+			document.write((j.toFixed(2))+"<br>")
+			
+			
+		//var a= new Number(123.456abc); // abc에의해 안됨
+		//var b= parseInt()123.456abc) //위와 동일
+		//실수->정수,문자열 ->정수
+		//정수 변환 불가능한 무자열 제외 변환
+		//Number 3	
+			var a= new Number("123.456abc"); //문자로 받을떈 된다
+			var b= parseInt("123.456abc") //문자로 받을떈 된다
+			document.write(a+ "<br>");
+			document.write(b+ "<br>")
+			//문자열-> 숫자
+			//숫자 변환 불가능한 문자열 중단:NaN
+		
+	</script>
+	</body>
+</html>
+	

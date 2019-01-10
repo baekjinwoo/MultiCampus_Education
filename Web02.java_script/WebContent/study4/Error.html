@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+	<script>
+// 		try{
+// 		aalert('경고문');
+// 		}catch(e){ //e(=err=error)는 try문에서 발생한 에러문의 "오류내용객체"이다. 
+// 			alert(e.message); //message 변수 출력
+// 		}
+
+
+		function guess(){
+		try{	
+			var real=89;
+			var num= document.getElementById('num').value; //입력값을 불러오기
+			if(num == "") throw "공백임"; //의도적으로 오류를 발생시킴
+			if(isNaN(num)) throw "문자임";	
+			if(num> real) throw "큼";
+			if(num< real) throw "작음";
+			if(num==real) throw "성공";
+			
+		}catch(e){
+			document.getElementById("result").innerHTML="<H3>힌트: "+e+"</H3>"
+			
+		   }
+		}
+			
+		
+		</script>
+		<input type=text id='num'>
+		<input type=button value='추측' onclick="guess()">
+		<div id='result'> </div>
+	</body>
+</html>

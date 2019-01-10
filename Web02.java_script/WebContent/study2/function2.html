@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 함수 2 </title>
+	</head>
+	
+	<body>
+		<script>
+			//3-a. 매개변수와 리텈값 => 함수의 실행한 결과값을 보여달라는 것
+			
+			//함수안에 함수넣을땐, 리턴값도 함수가능한 자바에는 없는 특징
+			//function(function(){}){
+		    //	function(){}
+			// return function(){}
+			//}
+			
+			var result= f1(true,false) ;
+			document.write(result +b);
+			
+			function f2(x,y){ //매개변수(parameter): 함수 정의 전달받을 값
+				alert(x*y);
+			}
+			f2(2,5); //인수(argument): 함수 호출 전달하는 값
+			
+			document.write("<br>" +f2);		
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#r1, #r2").on('click', function() {
+			var col = $(this).val();
+			changeColor(col);
+		});
+		//$("#r2").on('click', function(){
+		//	var col = $(this).val();
+		//	changeColor(col);
+		//});	
+		
+		//#아이디값. 함수 <===jquery		
+		//시작시, 숫자와 영문자 8자리까지가능하고, @영문자 1자리이상 . (com| co.kr)종료기능
+		$('#btn').on('click', function() {
+			var email = $('#email').val();
+			var regexp = /^\w{1,8}@[a-zA-Z]+\.(com||co\.kr)$/; 
+
+
+			//alert(email.match(regexp));  //====> 설명:  email.match(/정규표현식/);
+										   //match값을 검사해서, null이 보이면 적합하지않다는 것
+			
+			if (email.match(regexp)) {//결과나오면
+				alert("일치");
+			} else {//null
+				alert('불일치');
+			}
+		});
+	});//ready end
+
+	function changeColor(color) {
+		$('body').css("background-color", color);
+	}
+</script>
+</head>
+<body>
+	<!-- radio:1개단일선택:
+name 속성값 동일 -->
+	<input type="radio" name="C1" id="r1" value="aqua">파랑색
+	<input type="radio" name="C1" id="r2" value="lightgreen">녹색
+	<br>
+	<input type=text id="email" value="12acAX@GOOGLE.com">
+	<input type=button id="btn" value="확인">
+
+</body>
+</html>
+
+
+

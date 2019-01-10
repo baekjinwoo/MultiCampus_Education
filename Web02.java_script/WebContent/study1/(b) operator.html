@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 값의 비교, 입력확인창, 경고창</title>
+	</head>
+	
+	<body>
+		<script>
+			var x =10;
+			var y =3;
+			var b = "<br>";
+			document.write(parseInt(x/y)+b);
+			document.write((x%y)+b);
+			
+			var z= "10.0"; 
+			document.write((x==z)+b); //10.0 == 10 값을 비교할 뿐이지, 타입은 상관없음
+			document.write((x===z)+b); //10.0 != 10 값도 같아야하고, 타입도 같아야한다.
+			document.write((x!==z)+b); //10.0 != 10 값 또는 타입이 달라야한다.
+			
+			//x, z값이 동일하면 "같다"파란색 글씨 출력
+			//      같지않다면 "같지 않다" 빨간색 글씨 출력
+			var result= (x==z?"같다":"같지않다");
+			document.write(result+ b);
+			
+			var t=
+				"<p style=\"color:blue;\"> 같다 </p>";  /* var string1="<p style='color:blue'> 같다 </p>"; */
+			var f=
+				"<p style='color:red;'> 같지 않다 </p>";
+			
+			var result2=((x===z)?t:f);
+			document.write(result2+b)
+			var result3=((x==z)?t:f);
+			document.write(result3+b);
+			
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+			var dap1 = confirm("정말로 가입하시겠습니까?"); //선택창
+			var dap2 = alert("가입하셧습니다."); 	 	//알림창
+			document.write('confirm는 리턴o: ' + dap1 + b); 
+		 	document.write("alert는 리턴x: " + dap2 + b); // 변수선언만 하고 출력하면 undefined, 
+		 							  // 메소드리턴결과값이 없는데 출력하면, undefined
+		 
+			//후속 동작
+			document.write((dap1===true?"네":"아니오") +b);
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+			var dap4 = prompt("몇살이세요?");
+			document.write("나이: "+ dap4+ b); //입력된 값
+			dap4= parseInt(dap4); //문자열을 정수로 바꿔주는 작업을 다시 한 번 해야지 20세, 20살와  세20을 구별할 수 있다.
+			document.write("값의 자료형: "+ typeof dap4+ b); //값의 자료형
+			
+			document.write((dap4>=15?"예매를 진행하세요":"예매할 수 없습니다") +b);
+			
+		</script>
+	</body>
+</html>

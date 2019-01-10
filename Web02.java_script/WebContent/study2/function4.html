@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<script>
+			//자바스크립트언어
+			//항상 맨위에 전역변수 선언
+			//항상 맨위에 함수 선언
+			
+			var i=10;
+			function f1(){
+				var j=20; //지역변수
+				document.write(j+"<br>");
+				k=30;
+				//함수내부든/외부든  var키워드 없이 선언된 변수는 전역변수
+			}
+			
+			function f2(){
+				k=40;//전역변수   ==> this.k=40;로 작성함으로써, 구분할 수 있다.
+				var k=50;//지역변수
+				document.write(k+"<br>");  //전역,지역변수의 이름이 같을때 , this가 없으면, 지역변수가 우선이다.
+			}
+			
+			//함수 호출(출력)
+			document.write(i+"<br>");
+			f1();				
+			f2();
+		</script>
+	</body>
+</html>
+
+<!-- 함수와 함수 주고받을때의 데이터전달은 : 매개변수, 전역변수 -->
+<!-- 무조건 현재의 함수내부는 지역변수 -->

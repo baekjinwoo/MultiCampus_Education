@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>		
+		링크사이트명:	<input type=text id="sitename"><br> 
+		링크url:	<input type=text id="siteurl"><br>
+		<input type=button value="링크추가" onclick="addLinkTag()"><br>
+		
+		<script>
+		var tmp;
+		function addLinkTag(){
+			sitearr= document.getElementById('sitename').value;
+			urlarr= document.getElementById('siteurl').value;
+			tmp+=document.write("<a href='sitearr'> urlarr  </a>");  
+			alert(tmp);
+			return tmp;
+		}
+		document.write(tmp);
+		
+		
+//			alert(sitearr);
+//			alert(urlarr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> window </title>
+		<script>
+			function movesite(){
+				//새창 열어서 구글이동
+				//window.open(url, 창이름, 화면크기, 스크롤바, 뒤로가도 아무것도없다는 t/f)
+				open('http://www.google.com', '_blank', 'width=300, height=300'); //window.open의 window는 생략가능
+				
+			}
+			
+			function movehtml(){
+				window.open('../study5/Dom5.html',"","width=300, height=200"); 
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" onclick="movesite()" value="구글이동">
+		<input type="button" onclick="movehtml()" value="dom5.html이동">
+	</body>
+</html>
+
+
+
+		<!-- 1.현재문서 없어지고 구글로  (이전은 돌아가기 클릭) -->
+		
+		<!-- 2. 현재 문서 내부 프레임창 내부 구글 -->
+		<!-- <iframe name='a'>
+		<a href='www.google.com' target='a' > 구글이동 </a> -->
+		
+		<!-- 3. 현재 문서 그대로 새창 열어 구글 이동 -->
+		
+		

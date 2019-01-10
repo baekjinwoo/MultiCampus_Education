@@ -1,0 +1,66 @@
+<!-- 배열을 써야 두번째 새번째 값도 불러올 수가 있다. -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function check(){
+
+				//1.gender 출력
+				var genderAr= document.getElementsByName('gender');
+				for(var i=0; i<gender.length; i++){
+					if(genderAr[i].checked){ //checked를 통하여 선택이 됬는지 안됬는지를 확인할 수 있다.
+						var gender=genderAr[i].value; //선택이 됬으면 value를 통해 값을 가져온다.
+						alert(gender);
+					}
+				}
+				//2. magor 출력
+				var majorAr= document.getElementByName('major');
+				for(var i=0; i<major.length; i++){
+					if(majorAr[i].checked){
+						var major=majorAr[i].value;
+						alert(major);
+					}
+				}
+				//3. class 출력
+				var classAr= document.getElementById('class'); //select를 사용했을경우, getElementByName아니고, Id를 쓴다.
+				for(var i=0; i<class.length; i++){
+					if(classAr[i].selected){ //select를 사용했을경우, checked아니고, selected를 쓴다
+						var cls=classAr[i].value; //class는 변수로 쓸수 없기때문에 cls로 작성.
+						alert(cls);
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+	<!-- 학년 반 성별 -->
+	성별선택
+	<input type=radio id='gender' name='gender' value='남자'> 남자
+	<input type=radio id='gender' name='gender' value='여자'> 여자
+	<br>
+	
+	전공선택(복수전공선택)
+	<input type="checkbox" id='major' name='major' value='전산'> 전산
+	<input type="checkbox" id='major' name='major' value='교육'> 교육
+	<input type="checkbox" id='major' name='major' value='경영'> 경영
+	<input type="checkbox" id='major' name='major' value='국어국문'> 국어국문
+	<br>
+	<select id='class'>
+	<option value="1반"> 1반 </option>
+	<option value="2반"> 2반 </option>
+	<option value="3반"> 3반 </option>
+	<option value="4반"> 4반 </option>
+	<option value="5반"> 5반 </option>
+	<option value="6반"> 6반 </option>
+	<option value="7반"> 7반 </option>
+	<option value="8반"> 8반 </option>
+	<option value="9반"> 9반 </option>
+	</select>
+	<input type="button" value='검증' onclick="check()">
+	
+	
+	</body>
+</html>

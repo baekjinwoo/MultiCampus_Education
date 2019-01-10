@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax와 json이용해서 저장된 파일읽기</title>
+<Style>
+	#id{
+		width:100%;
+		height: 50px;
+	}
+	#pw{
+		width: 100%;
+		height: 50px;
+	}
+	#s1{
+		background-color: silver;
+		width: 100%;
+		height: 50px;
+	}
+	#ajax_btn{
+		background-color: silver;
+		width: 100%;
+		height: 50px;
+	}
+</Style>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#ajax_btn").on('click', function(){
+		requestAjax();		
+	});	//on end
+	
+	function requestAjax(){
+		$.ajax({
+			url : "boardlist.json",
+			dataType : 'json' ,
+			success : function(server_result){
+				var server_json = server_result;
+				for(var i=0; i<server_json.length; i++){
+					var result=
+					server_json[i].seq+":"+
+					server_json[i].title+":"+
+					server_json[i].contents+":"+
+					server_json[i].writer+":"+
+					server_json[i].time+":"+
+					server_json[i].pw+":"+
+					server_json[i].view;
+					$("#result").html(
+						$("#result").html() +"<br>" +result);
+				}
+					$("#result").css("background-color","yellow");
+			} ,
+			error : function(e){ alert(e); },
+			complete : function(){ alert("서버통신완료!"); }
+		}); //ajax end
+	} //requestAjax end
+}); // ready end
+//data와 type이 필요없다. 서버로 전송하지않으니까.
+//url변경됨, datatype변경됨, JSON.parse변경됨
+
+</script>
+</head>
+<body>
+
+<center><input type="button" id=ajax_btn value=ajax게시물요청></center>
+
+<div id='result'
+style="text-align:center; background-color:aqua; border: aqua solid 3px;"> ajax 결과를 여기에 출력한다. </div>
+</body>
+</html>

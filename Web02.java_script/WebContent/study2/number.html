@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>
+		<script>
+		//사용자가 숫자 입력: hit가 같을 때까지
+		var hit=parseInt(Math.random()*100)+1;
+		while(true){
+			var input=prompt("숫자를 입력하세요");
+
+			if(input==hit){ 
+				document.write(input+"을 맞추셧습니다!!!");
+				break;
+			}
+			else if(input>hit){
+				document.write("입력한 값이 더 큽니다");
+			}
+			
+			else if(input<hit){
+				document.write("입력한 값이 더 작습니다");
+			}
+		}
+		
+	  /*var hit=50;
+		var input=prompt("숫자를 입력하세요");
+		var count=0;
+		
+		 if(input==hit){ 
+			document.write("동일! 반복중단");
+		}
+		else{
+			while(hit!=input){
+				input++;
+				count++;
+			}
+		}
+		document.write(count+"회 반복했습니다"); */
+		
+		
+		
+
+		
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 8장 java scripts (p.325) </title>
+	</head>
+	<body>
+		<script>
+	/* 		//1. 외부자바스크립트 참조방법: <script src='text.js'>
+			//2. x=4일때, document.write(x++)의 결과는? 4
+			//3. x=4일때, document.write(++x)의 결과는? 5	
+			var x=4;
+			document.write(x++);
+			
+			//3.100보다 작은 정수만을 입력받는 프로그램 (단, 100보다 크면 경고상자를 표시할 것)
+			var a=prompt('정수를 입력하세요');
+			if(a>100){
+				alert('정수'+a+"는 100보다 크다");
+			}
+			else{
+				document.write(a+"은  100보다 작다");
+			}
+			
+			//4. 1부터 100까지의 합을 구하는 프로그램. (단, alert로 출력한다)
+			var sum=0;
+			for(var i=0; i<=100; i++){
+				sum+=i;
+			}
+			alert(sum);
+			
+			
+			//5. 태양계의 모든 행성을 배열에 저장하고 반복하면서 행성의 이름을 경고상자로 출력하는 프로그램
+			//var bae=['목성','토성','수성','지구','금성']
+			var bae= new Array();
+			bae[0]='목성';
+			bae[1]='토성';
+			bae[2]='수성';
+			bae[3]='지구';
+			bae[4]='금성';
+			
+			for(var i=0; i<bae.length; i++){
+				alert(bae[i]);
+			}
+			
+			//6. confirm()메서드를 이용해서 게임한판 하겠냐고 물어본다. 
+			// progress()함수를 만들어서 들어온값의 인수가 참이면, 좋습니다. 게임을 시작합니다
+			// 인수가 거짓이면, 네, 나중에 하시죠를 경고창으로 출력
+			var con= confirm('게임 한판 하실래요?')
+			progress(con);
+			
+			function progress(con){
+				if(con==true){
+					alert("좋습니다. 게임을 시작합니다..")					
+				}
+				else if(con==false){
+					alert('네, 나중에 하시죠..')
+				}
+			}*/
+			
+			//7.function 
+			var myself = function(singer, stime, stitle){
+				this.singer=singer;
+				this.stime=stime;
+				this.stitle=stitle;
+				this.toString=function(){
+					return this.singer +":"+this.stime+":"+this.stitle;
+				}
+			}
+			var e2 = new myself('백지영',4,'불타는공연');
+			document.write(e2+"<br>");
+			
+			e2.myname='도라에몽';
+			document.write(e2.myname + e2);
+			
+			
+			
+					
+		</script>
+	</body>
+</html>

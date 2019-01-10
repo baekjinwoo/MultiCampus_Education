@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+	var initial; //전역변수
+	window.onload = function(){ //읽어오는 함수
+		initial = 
+			document.getElementById("max").innerHTML; 
+	}
+	
+	function check(){//ab
+		var text = document.getElementById("text").value; //text-align값이라서 value
+		var max = initial - text.length;
+		document.getElementById("max").innerHTML= max; //max값을 innerHTML안에 넣고 출력
+		
+		
+		//추가 css 적용
+		document.getElementById("max").style = "color:red; font : 궁서";
+		if(max < 0){
+			alert("입력초과");
+			document.getElementById("text").disabled="disabled";
+		}
+	}
+	</script>
+	</head>
+	
+	
+	<body>
+	 <h1 id="max">20 </h1> 
+	 <h3>글자까지 입력가능합니다. </h3>
+	 <textarea id="text" cols="50" rows="10"
+	 onkeyup="check()"></textarea>
+	<!--text id 태그내부 글자 1개 입력하면
+	max id 태그 내부 -1  -->
+	</body>
+</html>
+
+
+

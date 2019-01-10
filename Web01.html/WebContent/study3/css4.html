@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 화면 배치 스타일 </title>
+		<style>
+			p{ display: inline;  font-size: 30px} 
+			img{ float: left;}
+			h1{ display:inline; float: left; }		
+		</style>
+	</head>
+
+<!-- 
+margin: 부모태그와 여백
+왠만하면 width와 height로 배치한다. 아래는 겹칠가능성이 있기때문에
+추가적으로 
+top 왼쪽상단, bottom, left, right도 있다.
+ -->
+	
+	<body>
+		<p> 텍스트 </p>
+		<h1> 헤딩 </h1>
+		<!-- <h1><p> 텍스트 </p></h1> --> <!-- 글자가 위에있음, inline안한 값과 같은 결과 -->
+		<!-- <p> 텍스트 </p> --> <!-- 글자가 아래에 있음 -->
+		<img src="../multimedia/chrome.jpg">
+	</body>
+</html>

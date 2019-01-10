@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<!-- 		1. 선택: 로그인하셧습니까? 
+			(confirm이용)
+			확인버튼클릭 : 내정보 보러가기(<a href="">), 로그아웃 버튼 생성 출력 (<input type="button">)
+			취소버튼클릭 : 아이디 text, 암호 password, 로그인 버튼 생성 출력 -->
+	<head>
+		<meta charset="UTF-8">
+		<title> 로그인을 하셧습니까? </title>
+	</head>
+
+	<body>
+		<script>
+			 var b = "<br>";
+			 var result = confirm("로그인하셨습니까?");
+			 
+			 if(result==true){
+				var im = "<a href='http://www.google.com'> 내 정보 보러가기  </a>";
+				var bu1 = "<input type='button' value='로그아웃'/>";
+				document.write(im +b);
+				document.write(bu1 +b);
+			 }
+			 else{
+				var id = "<input type='text' value='아이디'/>";
+				var pw = "<input type='password' value='비밀번호'/>";
+				var bu2 = "<input type='button' value='로그인'/>";
+				document.write(id +b);
+				document.write(pw +b);
+				document.write(bu2 +b);
+			 }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 방법1. websocket.html 실행 </title>
+</head>
+<body>
+<div id="result"></div>
+메시지입력: <input type=text id=inputMessage><br>
+<input type=button value=서버전송 onclick="send()">
+</body>
+
+
+
+<script> 
+// 클라이언트
+// body태그 밖에다가 script를 사용할 경우, (document).ready(function(){})필요없음
+						//http:localhost:9090/el_jstl/web_socket/websocket.html
+var websocket= new WebSocket("ws://localhost:9090/08.el_jstl/broadcast"); //폴더나 패키지상관없이 프로젝트/broadcast
+websocket.onopen=function(event){
+	document.getElementById("result").innerHTML="<h3>웹소켓연결</h3>";
+	websocket.send("클라이언트가 전달합니다"); //open되자마자 메세지하나 보내보도록
+}
+websocket.onmessage=function(event){
+	document.getElementById("result").innerHTML+= event.data+"<br>"; //이전값을 누적하고, 새로운 값마다 개행처리
+		//"<h3>웹소켓서버로부터 메시지전달</h3>"+event.data;
+
+}
+websocket.onerror=function(event){
+	document.getElementById("result").innerHTML="<h3>오류발생</h3>";
+
+}
+
+function send(){
+	websocket.send(document.getElementById("inputMessage").value); //서버로 보내라. input값은 value로 출력한다.
+}
+
+
+</script>
+</html>

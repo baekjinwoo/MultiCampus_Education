@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> dom_jquery </title>
+		<script src= jquery-3.2.1.min.js></script>
+		<script></script>
+	</head>
+	
+
+
+	<body>
+		<input type='button' value='show it' id='btn1'>
+		<input type='button' value='hide it' id='btn2'>
+		<input type='button' value='animate' id='btn3'>
+		<input type='button' value='stop' id='btn4'>
+		
+		<img id='dog' src='../image/1.jpg' alt="이미지 안보임" width=120 height=100 style="display:none">
+									   <!-- alt= 공백이 있는 값일 경우 ''를 붙여준다 -->
+									   
+		<script> //button을 누르면 show it을 보여주기로 하자.
+			$(document).ready(function(){
+				$('#btn1').on('click',function(){
+					$('#dog').show('3000',function(){
+							//show('fast'
+							//show('slow'
+						alert('이미지생성완료');
+					})
+				});
+				
+				$('#btn2').on('click',function(){
+					$('#dog').hide(3000,function(){ alert('이미지 없어짐'); })
+				});
+			
+				$('#btn3').on('click',function(){ //위에서 display:none은 알아서 show처리된다
+					$('img').animate({left:'100px', width:'300px',top:'200px'},function(){ alert('이미지 늘어남'); })
+				});
+				
+				$('#btn4').on('click',function(){ //위에서 display:none은 알아서 show처리된다
+					$('img').stop(function(){ alert('이미지 없어짐'); })
+				});
+			});
+			
+			
+			//toggle을 사용할 경우, show와 hide를 번갈아가면서 사용한다
+			//그 외에 fadeIn, fadeOut, slideDown, slideUp
+		</script>
+	</body>
+</html>

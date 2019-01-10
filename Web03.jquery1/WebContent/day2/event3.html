@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> 이벤트 객체를 통한 처리</title>
+		<script src='jquery-3.2.1.min.js'></script>
+		<script>
+			$(document).ready(function(){
+			// img태그 마우스 올린 상태
+				$('img').on('mouseover', function(e){ //이벤트객체 e
+					//'x좌표는'+e.pageX +'y좌표는' +e.pageY;
+					'inform'+e.type +':' +e.which; //좌표의 기준점은 왼쪽상단부터!! //which는 누구한테 발생햇니를 알수있다.
+													   //이벤트의 타입형을 알 수 있다.
+					
+					//꾸미기							   
+					$('#result').html('#pointer');
+					$('#result').css('color','red');
+					$('#result').css('border','solid 2px red');
+					
+					
+			});
+				$('img').on('mouseout', function(e){
+					$('#result').html('이미지외부');
+					$('#result').css('color','red');
+					$('#result').css('border','solid 2px red');
+				});
+			});
+				//JAVA SCRIPT에서 $('INPUT') ON ('focus',FUNCTION()){~~}
+				//JAVA SCRIPT에서 $('INPUT') ON ('blur',FUNCTION()){~~}
+				//마우스 갓다대면, 아니면~~
+		</script>
+	</head>
+	<body>
+	
+	
+	<!--  onmouseover onmouseout -->
+	<div id='result'>
+	<img src='../image/google.png' width=100 height=80>
+	</div>
+	</body>
+</html>

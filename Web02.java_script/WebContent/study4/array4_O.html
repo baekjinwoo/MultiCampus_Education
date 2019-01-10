@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		var empArray = [];//전역변수
+		var Employee = function(id, name, salary, dept) {
+			this.id = id;
+			this.name = name;
+			this.salary = salary;
+			this.dept = dept;
+			this.time = new Date();
+			this.toString = function() {
+				return this.id + ":" + this.name + ":" + this.salary + ":"
+						+ this.dept + ":" + this.time.toLocaleString();
+			}
+		}
+		function insertEmp() {
+			var emp = document.getElementById("emp").value;
+			if (emp == "") {
+				alert("등록완료");
+				return;
+			}
+			"jaba JavaScript".match(/java/ig);
+			var EmpInform = emp.split(/:|,|-/);
+			var e1 = new Employee(EmpInform[0], EmpInform[1], EmpInform[2],
+					EmpInform[3]);
+			empArray.push(e1);
+			//printEmp();
+		}
+
+		function printEmp() {
+			empArray.sort(function(x, y) {
+				return y.salary - x.salary;
+			});
+
+			var result = "";
+			for ( var i in empArray) {
+				result += "<h3>" + empArray[i] + "</h3>";
+			}
+			document.getElementById("result").innerHTML = result;
+		}
+	
+	</script>
+	<input type=text id="emp">
+	<input type=button value="등록" onclick="insertEmp()">
+<!-- 	등록 버튼 클릭 이벤트(키보드,마우스)가 발생하면 insertEmp를 호출해라 -->
+	<input type=button value="정렬" onclick="printEmp()">
+	<!-- 1.자바스크립트 원하는 시점 호출:
+     2.태그 클릭 동작 시점 호출:반복 동작 
+     3.시간 경과 / 반복 주기 호출
+     :setInterval / setTimeout
+ -->
+
+	<div id="result"></div>
+
+</body>
+</html>
+
+<!-- 
+반복{
+0.emp id 태그에 다음과 같이 입력:공백 중단
+1. emp id 태그에 다음과 같이 입력하고
+100:이사원-56000,교육부
+2. 등록 버튼을 클릭하면 insertEmp 함수를 호출한다.
+3. 입력 데이터를 사번:사원명-급여,부서명의 형식으로
+분류하여 Employee 타입의 객체로 생성한다.
+(String.split(/, 또는 : 또는 - /)  )
+이 때, 등록날짜는 현재 시간으로 생성한다.
+4. 3의 객체를 empArray 배열에 저장한다.
+}
+5. empArray를 급여순으로 정렬한다.
+6. empArray를 result id를 가진 태그 자리에 
+출력한다.
+
+
+-->

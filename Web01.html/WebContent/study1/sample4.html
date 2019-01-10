@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>테이블 태그연습</title>
+	</head>
+	
+	<body> <!-- 문제1 -->
+		<table> 
+			<tr> <td> 1행 1열 </td>
+				 <td> 1행 2열 </td>
+
+ 			<tr> <td> 2행 1열</td>
+				 <td> 2행 2열 </td>
+
+ 			<tr> <td> 3행 1열</td>
+				 <td> 3행 2열 </td>
+		</table>
+
+<hr>
+		<table border ='3' width=50% height=50%>
+			<caption> 최근에 본 영화 </caption>
+			<tr> <th> 영화제목 </th>
+			 	 <th> 연도  </th>
+			 	 <th> 감독  </th>
+			 	 <th> 평가  </th>
+			 	 <td rowspan> 영화감상하세요 </td> 
+			</tr>
+			
+			<tr> <td> 라이프 오브 파이 </td>
+			 	 <td> 2013 </td> 
+			 	 <td> 톰후퍼 </td> 
+			 	 <td> 8.28 </td> 
+			 	 <td rowspan="4"> 즐겁게보세요 </td>
+			
+			<tr> <td> 장고:분노의 추적자</td>
+			 	 <td> 2012 </td> 
+			 	 <td> 타란티노 </td> 
+			 	 <td> 8.29 </td> 
+			
+			<tr> <td colspan = "2"> 새영화 </td>  <!-- 두 개의 열을 합친다 -->
+				 <td colspan = "2"> 이자바 </td>
+			 	 
+		</table>	
+	
+		<!-- 문제2 -->
+<hr>
+		<table border ='3'>
+			<caption> 테이블 제목 </caption>
+			<tr> <td> 100 </td> <td> 200 </td> <td> 300 </td>
+			<tr> <td> 400 </td> <td> 500 </td> <td> 600 </td>
+			<tr> <td> 700 </td> <td> 800 </td> <td> 900 </td>
+		</table>		
+	
+		<!-- 문제3 -->
+<hr>	
+		<table border ='2'>
+			<tr> <td> 홍길동 </td> <td> 98 </td>
+			<tr> <td> 김철수 </td> <td> 80 </td>
+		</table>
+	
+		<!-- 문제4 -->
+<hr>	
+		<table border='2'>
+			<caption> 행렬_제목</caption>
+			<tr> <th> 1열 </th> <th> 2열 </th> <th> 3열 </th>
+			<tr> <td rowspan="2"> 1_1 </td> <td> 1_2 </td> <td> 1_3</td>
+			<tr> 						  <td> 2_2 </td> <td> 2_3 </td>
+			<tr> <td colspan="3"> 3_1 </td>
+			
+		
+		</table>
+	
+	
+		<!-- 문제5 -->
+<hr>	
+		<table border="2" weight=200 height= 130> 
+			<caption> 로그인 창</caption>
+			<tr> <th> 아이디 </th> <td> java </td>
+			<tr> <th> 암호 </th> <td> html </td>
+			<tr> <td colspan="2"> 로그인 </td> 
+		</table>
+<br> 	<table border="4" weight=50% height=50%>
+			<caption> 시간표</caption>			
+			<tr> <th> 시간표 </th> <th> 월 </th> <th> 화 </th> <th> 수 </th> <th> 목 </th>> 
+			<tr> <td> 1교시 </td> <td> html </td> <td> servlet </td> <td rowspan="3"> 공강 <td> servlet </td>
+			<tr> <td> 2교시 </td> <td> java </td> <td> jsp </td> <td> jsp </td>
+			<tr> <td> 3교시 </td> <td colspan="2"> oracle </td> <td> oracle </td>
+			<tr> <td> 4교시 </td> <td colspan="4"> algorithm </td>
+		</table>				
+		
+		<!-- 문제6 -->
+<hr>	
+		<table border="4">
+			<caption> 그립삽입 </caption>
+			<tr>
+				<td width='50%'> 
+					<ul>
+						<li> 리스트항목1 </li>
+						<li> 리스트항목2 </li>
+						<li> 리스트항목3 </li>
+					</ul>
+				</td>
+				<td> <ol>
+						<li> 리스트항목4 </li>
+						<li> 리스트항목5 </li>
+						<li> 리스트항목6 </li>
+					</ol>
+				</td>
+				
+			</tr>
+			
+		    <tr> <td> 
+		    		<p> 테이블 셀 안에는 어떠한 요소도 넣을 수 있습니다 </p>
+		   	    </td>
+			    <td> 
+			     	<img src= "../thumbnails/3.png" alt="액박떳음"> 
+			    </td>	  
+		</table>
+		
+		
+				<!-- 문제7 -->
+<hr>	
+		<h1> My Homepage </h1>			
+			 <img src="../image/3.png" alt="액박떳음">  <pre><b>컴퓨터 프로그래머</b> 를 꿈꾸며 열심히 공부하고 있는 1인입니다.</pre>
+			 <!-- <img src="../image/3.png" alt="액박떳음">  <pre><b>컴퓨터 프로그래머</b> 를 꿈꾸며 열심히 공부하고 있는 1인입니다.</pre> -->
+			 
+		<h2> <font size= "4"><b>현재 학습하고 있는 과목 </b></font></h2>
+			 <ul> 
+			 	<il> C언어 </il>
+			 	<il> Java언어 </il>
+			 	<il> 웹프로그래밍 <a href=http://google.com>W3C사이트 </a></il>
+			 </ul>			 
+		<h3><font size= "4"><b> 이번학기 시간표 </b></font></h3> 
+			<table border="3" weight=50% height=50%>
+			<caption> 시간표 </caption>
+				<tr> <td></td> <td> 월요일 </td> <td> 화요일 </td> <td> 수요일 </td> 
+				<tr> <td> 1교시 </td> <td> C언어 </td> <td> JAVA언어 </td> <td> JAVA언어 </td> 
+				<tr> <td> 2교시 </td> <td> C언어  </td> <td> JAVA언어 </td> <td> JAVA언어 </td> 
+			</table>
+		
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		//주소록 찾고 불러오기로 응용가능하다
+		var newwin; 
+		function check(){
+			newwin = window.open("id_check.html","","height=200, width=300, top=100, left=300,titlebar=no, scrollbars=no, menubar=no"); }
+			//새롭게 창 하나가 생성됨    //document.getElementById('id').value
+			//window.close(); //현재창 닫기
+			//newwin.close(); //새창을 닫기. (새창을 닫기위해서는 새창 이름이 필요하다)
+		}
+		function childclose(){
+			document.getElementById("parent").innerHTML	= newwin.document.getElementById("result").innerHTML;
+			newwin.close();
+		
+		function browserinform(){
+			document.getElementById("parent").innerHTML	= navigator.userAgent;
+		}
+
+		</script>
+	</head>  
+	
+	
+	<body>
+		아이디 입력: <input type=text id='id'>
+		<input type=button value=중복확인  onclick='check()'>
+		
+		<input type=button value=새창닫기  onclick='childclose()'>
+		
+		<input type=button value=새창이동 onclick="newwin.moveBy(10,10); newwin.focus();"> <!-- 왼쪽10, 아래10 이동 -->
+		
+		<input type=button value=새창크기변경 onclick="newwin.resizeTo(screen.availWidth, screen.availHeight)"> <!-- new window.screen -->
+
+		<input type=button value=새창사이트변경 onclick="newwin.location.replace('http://www.google.com')"> <!-- newwin.open --> <!-- 입력한 값을 해당링크로 전송할때 -->
+
+		<input type=button value=브라우저정보 onclick='browserinform()'> <!-- newwin.open --> <!-- 입력한 값을 해당링크로 전송할때 -->
+
+		<div id='parent'></div>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(
+function(){
+	//$('.a').css('background-color','lightgreen').css('font','20px italic 궁서').css('border','solid 3px blue').css('color','gray')	//tr태그는 선을 가지고 있지않기때문에, 문자를 가지고 있지 않기떄문에 td로 해야한다
+	
+	$('.a').removeClass('a'); //class명 a인 태그들 선택 a클래스 속성 없애라
+	$('.a').removeAttr('class'); //a의 클래스속성을 없애라 (css함수여러개를 클래스.b로 묶어서  불러오기)
+	$('.a').addClass('.b'); //b로 바꾸다.
+
+	$('th:nth-child(3n+2)').addClass('b'); //배수로 찾는방법
+	
+});
+
+</script>
+<style>
+h1 {color : red;}
+table {border : solid 10px; }
+td{border : solid 5px purple; }
+
+b{
+	background-color:'yellow';
+	font:'20px italic 궁서';
+	border: 'solid 3px blue';
+	color:'gray'
+}
+</style>
+</head>
+
+
+<body>
+<h1> 저녁에 뭐 먹을까요?</h1>
+<select>
+	<option class='b'> 짜장 </option>
+	<option class='b'> 짬뽕 </option>
+	<option class='b' selected="selected"> 탕수육 </option>
+	<option class='b'> 군만두 </option>
+	<option class='b'> 우동 </option>	
+</select>
+
+<h1> 게시판이에요</h1>
+<table>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+<tr>
+<td>번호</td><td class="a">제목</td><td>작성자</td>
+</tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
+

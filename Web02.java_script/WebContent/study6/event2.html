@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+		
+		function auto(){ //커서의 초기value값은 ABCD로
+			document.getElementById('id').value='ABCD'; /* 초기value값은 없지만, ABCD로 초기화해라 */
+		}
+		function lower(){ //커서의 포커스를 잃으면 소문자로 바꿔주도록
+			var id= document.getElementById('id').value;
+			var id= document.getElementById('id').value = 
+									id.toLowerCase(); /* 소문자로 바꾸고, 다시 id에 저장 */
+		}
+		
+		function checkpw(){
+			/* 입력 암호의 길이 6자이상 10자 이하인지 체크한 결과를  작성한 뒤, unfocus되면 result태그 출력 */
+			var pw= document.getElementById('pw').value;
+			if(pw.length>=6 && pw.length<=10){
+				var pw_result= '유효함';
+			}
+			else{
+				var pw_result= '유효하지 않음';				
+			}
+			document.getElementById('result').innerHTML=pw_result; //div안의 내용을 작성하기 위해 innerHTML을 쓴다. (value는 X)
+		}
+		
+		</script>
+	</head>
+	
+	<body>				<!-- 처음부터 속성값을 보여주고싶으면 value -->
+		아이디입력: <input type=text id='id' onfocus="auto()" onblur="lower()"><br> 
+		비번입력: <input type="password" id='pw' maxlength='10' onblur="checkpw()"><br> <!-- required="required" -->
+		성별선택: <input type="radio" id="gender" name='gender'> 남자
+ 			   <input type="radio" id="gender" name='gender'> 여자 <br>
+ 			   <input type="button" onclick="checkpw()" value='체크'><br>
+ 			   <!-- 여기서 checkpw함수의 이벤트처리를 두가지로 적용됬다. (1)커서를 이용한 onblur  (2)버튼을 이용한 onclick -->
+ 			  
+ 			   <div id='result'></div>		
+			   <!-- radio를 같은 name으로 지정해야 복수선택을 방지가능하다 -->
+	</body>
+</html>
