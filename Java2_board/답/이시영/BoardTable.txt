@@ -1,0 +1,18 @@
+create table member (
+	id varchar2(20) constraint m_id_pk primary key,
+	password varchar2(10) constraint m_password_nn not null,
+	member_name varchar2(30),
+	email varchar2(30) constraint m_email_ck check (email like '%@%'),
+	phone varchar2(20)
+);
+
+create table board (
+	num number(5) constraint b_num_pk primary key,
+	title varchar2(100) constraint b_title_nn not null,
+	text varchar2(4000),
+	wmember varchar2(20) constraint b_wmember_fk references member(id),
+	wtime date,
+	pwd number(5),
+	cnt number(10), constraint b_cnt_ck check (cnt>=0)
+);
+

@@ -1,0 +1,23 @@
+create table member (
+id varchar2(20) constraint member_id_pk primary key,
+pw varchar2(10) constraint member_pw_nn not null,
+member_name varchar2(30),
+email varchar2(30) constraint member_email_ck check(email like '%@%'),
+phone varchar2(20)
+);
+
+create table board (
+num number(5) constraint board_num_pk primary key,
+title varchar2(100) constraint board_title_nn not null,
+main varchar2(4000),
+writer varchar2(20) constraint board_writer_fk references member(id),
+w_time date,
+pw number(5),
+n_view number(10) constraint board_n_view_ck check(n_view >= 0)
+);
+
+
+create sequence board_sequence
+start with 1
+increment by 1
+nomaxvalue;
