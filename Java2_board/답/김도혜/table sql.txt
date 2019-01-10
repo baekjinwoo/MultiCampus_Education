@@ -1,0 +1,21 @@
+create table member(
+id varchar2(20) constraint member_id_pk primary key,
+password varchar2(10) constraint member_pw_nn not null,
+member_name varchar2(30),
+email varchar2(30) constraint member_email_ck check(email like '%@%'),
+phone varchar2(20)
+);
+
+
+create table board( 
+seq number(5) constraint board_seq_pk primary key,
+title varchar2(50) constraint board_title_nn not null,
+contents varchar2(4000),
+writer varchar2(20) constraint board_writer_fk references member(id),
+time date,
+pw varchar2(30),
+viewcount number(5)
+);
+
+create sequence board_seq;
+
